@@ -30,14 +30,15 @@
         border: 2px solid #1e3a5f;
         border-radius: 5px;
         padding: 40px;
-        text-align: center;
+        text-align: left;
         min-height: 300px;
         display: flex;
-        align-items: center;
+        flex-direction: column;
         justify-content: center;
         color: #8ab4f8;
         font-size: 18px;
         font-style: italic;
+        line-height: 1.6;
     }
     .back-btn {
         background-color: #1e3a5f;
@@ -69,7 +70,14 @@
     </div>
     
     <div class="dichiarazione">
-        [DICHIARAZIONE DOPO LA MORTE DI FRANCESCO]
+        <p><strong>Giorgio Canepa</strong><br>
+        1966 – 60 anni<br>
+        Proprietario – Capo famiglia<br>
+        Fondatore e gestore della pizzeria.</p>
+
+        <p>È una persona appassionata e metodica, profondamente legata alla tradizione e alla qualità della sua cucina. Ama il lavoro ben fatto e non scende a compromessi sugli ingredienti, né sui prezzi, mantenendo la filosofia di un locale “onesto e sincero”.</p>
+
+        <p>La sua dedizione alla pizzeria è evidente, così come il suo amore per la famiglia: è padre di Francesco e Ugo, e nonno di Michael, con cui ha un legame affettuoso.</p>
     </div>
     
     <button class="back-btn" onclick="goBack()">
@@ -84,11 +92,9 @@
 <script>
 function goBack() {
     if (document.referrer) {
-        // Torna alla pagina precedente se esiste
         window.history.back();
     } else {
-        // Altrimenti vai sempre alla pagina principale
-        window.location.href = 'area-comune.html'; // sostituisci con il nome della tua pagina principale
+        window.location.href = 'area-comune.html';
     }
 }
 </script>
