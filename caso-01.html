@@ -1,38 +1,48 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Documenti – Relazioni Caso Canepa</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Documenti Relazioni Caso Canepa</title>
 <style>
-body { 
-    background-color: #0a1929; 
-    color: #c0d8ff; 
-    font-family: 'Courier New', monospace; 
-    padding: 20px; 
-    line-height: 1.6; 
-}
-.container { max-width: 700px; margin: 0 auto; }
-.header { text-align: center; padding: 20px 0; border-bottom: 1px solid #1e3a5f; margin-bottom: 30px; }
-.header h1 { color: #4dabff; font-size: 24px; margin-bottom: 5px; }
-.header p { color: #8ab4f8; font-size: 14px; }
-.doc-section { 
-    background-color: #112240; 
-    border: 1px solid #1e3a5f; 
-    border-radius: 5px; 
-    padding: 25px; 
-    margin-bottom: 30px;
-}
-.doc-box {
+  body {
     background-color: #0a1929;
+    color: #c0d8ff;
+    font-family: 'Courier New', monospace;
+    padding: 20px;
+    line-height: 1.6;
+  }
+  .container {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .header {
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #1e3a5f;
+    margin-bottom: 30px;
+  }
+  .header h1 {
+    color: #4dabff;
+    font-size: 28px;
+    margin-bottom: 5px;
+  }
+  .header p {
+    color: #8ab4f8;
+    font-size: 16px;
+  }
+  .doc-box {
+    background-color: #112240;
     border: 1px solid #1e3a5f;
-    padding: 15px;
-    border-radius: 3px;
-    min-height: 150px;
+    border-radius: 5px;
+    padding: 20px;
+    min-height: 200px;
     color: #a8c7ff;
     font-size: 14px;
-}
-.back-btn {
+    white-space: pre-wrap;
+    overflow-y: auto;
+  }
+  .back-btn {
     background-color: #1e3a5f;
     color: #64b5ff;
     border: 1px solid #4dabff;
@@ -41,42 +51,36 @@ body {
     font-size: 16px;
     cursor: pointer;
     border-radius: 3px;
-    margin: 20px 0;
+    margin-top: 25px;
     display: block;
-}
-.back-btn:hover { background-color: #2a4a7a; }
+    text-align: center;
+    width: fit-content;
+  }
+  .back-btn:hover {
+    background-color: #2a4a7a;
+  }
 </style>
 </head>
 <body>
-<div class="container">
+  <div class="container">
+    <div class="header">
+      <h1>Documenti Relazioni Caso Canepa</h1>
+      <p>Area riservata per la gestione dei documenti del caso</p>
+    </div>
+    <div class="doc-box" contenteditable="true" spellcheck="false">
+      <!-- Qui puoi scrivere o incollare i documenti -->
+    </div>
+    <button class="back-btn" onclick="goBack()">← TORNA ALLA PAGINA COMUNE</button>
+  </div>
 
-<div class="header">
-<h1>Documenti – Relazioni Caso Canepa</h1>
-<p>Area riservata per i documenti del caso</p>
-</div>
-
-<div class="doc-section">
-<h2>Documenti disponibili</h2>
-
-<!-- Casella dove inserire o mostrare i documenti -->
-<div class="doc-box" contenteditable="true">
-<!-- Qui puoi incollare o scrivere i documenti, note, relazioni -->
-</div>
-</div>
-
-<!-- Bottone per tornare alla pagina principale -->
-<button class="back-btn" onclick="goBack()">← TORNA ALLA PAGINA COMUNE</button>
-
-<script>
-function goBack() {
-    if (document.referrer) {
+  <script>
+    function goBack() {
+      if (document.referrer) {
         window.history.back();
-    } else {
-        window.location.href = 'index.html'; // sostituisci con il nome della tua pagina principale
+      } else {
+        window.location.href = 'index.html'; // sostituisci con la tua pagina principale
+      }
     }
-}
-</script>
-
-</div>
+  </script>
 </body>
 </html>
