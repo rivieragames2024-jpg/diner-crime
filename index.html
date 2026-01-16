@@ -6,6 +6,7 @@
     <title>Federal Database - Accesso Sicuro</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
             background-color: #0a1929;
             color: #c0d8ff;
@@ -15,6 +16,7 @@
             justify-content: center;
             align-items: center;
         }
+
         .login-container {
             width: 90%;
             max-width: 400px;
@@ -24,6 +26,7 @@
             padding: 40px 30px;
             box-shadow: 0 0 20px rgba(0, 60, 120, 0.3);
         }
+
         h1 {
             color: #4dabff;
             text-align: center;
@@ -31,15 +34,18 @@
             font-size: 24px;
             letter-spacing: 1px;
         }
+
         .input-group {
             margin-bottom: 20px;
         }
+
         label {
             display: block;
             color: #8ab4f8;
             margin-bottom: 8px;
             font-size: 14px;
         }
+
         input {
             width: 100%;
             padding: 12px 15px;
@@ -50,10 +56,18 @@
             font-size: 16px;
             border-radius: 4px;
         }
+
+        /* Nasconde i caratteri come una password,
+           senza usare type="password" */
+        #password {
+            -webkit-text-security: disc;
+        }
+
         input:disabled {
             opacity: 0.6;
             cursor: not-allowed;
         }
+
         button {
             width: 100%;
             padding: 14px;
@@ -67,9 +81,11 @@
             margin-top: 10px;
             transition: background-color 0.3s;
         }
+
         button:hover {
             background-color: #2a4a7a;
         }
+
         .error {
             color: #ff6b6b;
             text-align: center;
@@ -77,6 +93,7 @@
             font-size: 14px;
             display: none;
         }
+
         .footer {
             text-align: center;
             color: #5a7eb0;
@@ -88,25 +105,35 @@
     </style>
 </head>
 <body>
+
     <div class="login-container">
         <h1>FEDERAL DATABASE</h1>
-        
+
         <div class="input-group">
             <label>ID OPERATORE</label>
             <input type="text" value="USR-FED-7842" disabled>
         </div>
-        
+
         <div class="input-group">
             <label>PASSWORD</label>
-            <input type="password" id="password" placeholder="Inserire credenziali">
+            <input
+                type="text"
+                id="password"
+                placeholder="Inserire credenziali"
+                autocomplete="off"
+                autocorrect="off"
+                autocapitalize="off"
+                spellcheck="false"
+                inputmode="text"
+            >
         </div>
-        
+
         <button onclick="login()">ACCEDI AL SISTEMA</button>
-        
+
         <div id="error" class="error">
             ACCESSO NEGATO - Credenziali non valide
         </div>
-        
+
         <div class="footer">
             Sistema di Accesso Federale v3.4<br>
             Tutti gli accessi vengono registrati
@@ -117,28 +144,41 @@
         function normalize(text) {
             return text.toLowerCase().replace(/[^a-z0-9]/g, '');
         }
-        
+
         function login() {
-            const password = normalize(document.getElementById('password').value);
+            const passwordInput = document.getElementById('password');
+            const password = normalize(passwordInput.value);
             const error = document.getElementById('error');
-            
+
             if (password === 'federalaccess') {
-                window.location.href = 'area-comune.html';
+                error.style.display = 'block';
+                error.style.color = '#4caf50';
+                error.textContent = 'ACCESSO AUTORIZZATO...';
+
+                passwordInput.disabled = true;
+
+                setTimeout(() => {
+                    window.location.href = 'area-comune.html';
+                }, 1200);
             } else {
                 error.style.display = 'block';
-                document.getElementById('password').value = '';
-                
+                error.style.color = '#ff6b6b';
+                error.textContent = 'ACCESSO NEGATO - Credenziali non valide';
+
+                passwordInput.value = '';
+
                 setTimeout(() => {
                     error.style.display = 'none';
                 }, 3000);
             }
         }
-        
-        document.getElementById('password').addEventListener('keypress', function(e) {
+
+        document.getElementById('password').addEventListener('keypress', function (e) {
             if (e.key === 'Enter') {
                 login();
             }
         });
     </script>
+
 </body>
 </html>
