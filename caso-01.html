@@ -3,107 +3,56 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Federal Database - Accesso Generale</title>
-
+<title>Sospettato #01</title>
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
 body { background-color: #0a1929; color: #c0d8ff; font-family: 'Courier New', monospace; padding: 20px; line-height: 1.6; }
 .container { max-width: 600px; margin: 0 auto; }
 .header { text-align: center; padding: 20px 0; border-bottom: 1px solid #1e3a5f; margin-bottom: 30px; }
-.header h1 { color: #4dabff; font-size: 24px; margin-bottom: 5px; letter-spacing: 1px; }
-.header p { color: #8ab4f8; font-size: 14px; }
-.access-box { background-color: #112240; border: 1px solid #1e3a5f; border-radius: 5px; padding: 25px; margin-bottom: 30px; text-align: center; }
-.access-box h2 { color: #64b5ff; margin-bottom: 20px; font-size: 18px; }
-.password-input { width: 100%; padding: 12px 15px; background-color: #0a1929; border: 1px solid #1e3a5f; color: #c0d8ff; font-family: 'Courier New', monospace; font-size: 16px; border-radius: 3px; margin-bottom: 15px; }
-.access-btn { background-color: #1e3a5f; color: #64b5ff; border: 1px solid #4dabff; padding: 12px 30px; font-family: 'Courier New', monospace; font-size: 16px; cursor: pointer; border-radius: 3px; width: 100%; }
-.access-btn:hover { background-color: #2a4a7a; }
-.docs-section { background-color: #112240; border: 1px solid #1e3a5f; border-radius: 5px; padding: 25px; margin-bottom: 30px; }
-.docs-section h2 { color: #64b5ff; margin-bottom: 20px; font-size: 18px; border-bottom: 1px solid #1e3a5f; padding-bottom: 10px; }
-.doc-item { background-color: #0a1929; border: 1px solid #1e3a5f; padding: 15px; margin-bottom: 15px; border-radius: 3px; }
-.doc-item h3 { color: #8ab4f8; margin-bottom: 10px; font-size: 16px; }
-.doc-item p { color: #a8c7ff; font-size: 14px; }
-.footer { text-align: center; color: #5a7eb0; font-size: 12px; margin-top: 40px; padding-top: 20px; border-top: 1px solid #1e3a5f; }
-.error { color: #ff6b6b; text-align: center; margin-top: 10px; font-size: 14px; display: none; }
-.password-hint { color: #5a7eb0; font-size: 11px; text-align: center; margin-top: 10px; font-style: italic; }
+.header h1 { color: #4dabff; font-size: 24px; margin-bottom: 5px; }
+.doc-section { background-color: #112240; border: 1px solid #1e3a5f; border-radius: 5px; padding: 25px; }
+.back-btn {
+    background-color: #1e3a5f;
+    color: #64b5ff;
+    border: 1px solid #4dabff;
+    padding: 12px 30px;
+    font-family: 'Courier New', monospace;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 3px;
+    margin: 20px 0;
+    display: block;
+}
+.back-btn:hover { background-color: #2a4a7a; }
 </style>
 </head>
 <body>
 <div class="container">
 
 <div class="header">
-<h1>FEDERAL DATABASE ACCESS</h1>
-<p>Clearance Level: STANDARD</p>
+<h1>Sospettato #01</h1>
+<p>Dettagli riservati</p>
 </div>
 
-<div class="access-box">
-<h2>ACCESSO AREE RISERVATE</h2>
-<input type="password" id="passwordInput" class="password-input" placeholder="Inserire codice di accesso">
-<button class="access-btn" onclick="checkPassword()">ACCEDI</button>
-<div class="password-hint">I codici ignorano maiuscole e simboli</div>
-<div id="errorMsg" class="error">Accesso negato</div>
+<div class="doc-section">
+<h2>Dettagli del sospettato</h2>
+<p>Qui puoi inserire tutte le informazioni relative al sospettato 01.</p>
 </div>
 
-<div class="docs-section">
-<h2>DOCUMENTI DISPONIBILI</h2>
-<div class="doc-item">
-<h3>DOSSIER #001 - PANORAMICA INIZIALE</h3>
-<p>Rapporto preliminare sul Caso Canepa.</p>
-</div>
-<div class="doc-item">
-<h3>PROTOCOLLO OPERATIVO</h3>
-<p>Linee guida standard per le indagini federali.</p>
-</div>
-<div class="doc-item">
-<h3>NOTA DI SISTEMA</h3>
-<p>I file riservati richiedono codici di accesso.</p>
-</div>
-</div>
-
-<div class="footer">
-Federal Intelligence System • Database v3.4 • Accesso Registrato
-</div>
-
-</div>
+<!-- Bottone per tornare alla pagina principale -->
+<button class="back-btn" onclick="goBack()">← TORNA ALLA PAGINA COMUNE</button>
 
 <script>
-function normalizePassword(text) {
-    return text.toLowerCase().replace(/[^a-z0-9]/g, '');
-}
-
-function checkPassword() {
-    const input = document.getElementById('passwordInput').value;
-    const password = normalizePassword(input);
-    const errorMsg = document.getElementById('errorMsg');
-
-    const suspectPasswords = {
-        'ombraverde': 'sospettato-01.html',
-        'silenziofreddo': 'sospettato-02.html',
-        'sanguebianco': 'sospettato-03.html'
-    };
-
-    const casePasswords = {
-        'cifrarossa': 'caso-01.html',
-        'veritasepolta': 'caso-02.html'
-    };
-
-    if (suspectPasswords[password]) {
-        window.location.href = suspectPasswords[password];
-        return;
+function goBack() {
+    if (document.referrer) {
+        // Torna alla pagina precedente se esiste
+        window.history.back();
+    } else {
+        // Altrimenti vai sempre alla home page
+        window.location.href = 'index.html'; // sostituisci con il nome della tua pagina principale
     }
-    if (casePasswords[password]) {
-        window.location.href = casePasswords[password];
-        return;
-    }
-
-    errorMsg.style.display = 'block';
-    document.getElementById('passwordInput').value = '';
-    setTimeout(() => { errorMsg.style.display = 'none'; }, 3000);
 }
-
-document.getElementById('passwordInput').addEventListener('keypress', function(e) {
-    if (e.key === 'Enter') { checkPassword(); }
-});
 </script>
 
+</div>
 </body>
 </html>
