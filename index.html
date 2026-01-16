@@ -4,10 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GIORGIO</title>
-
 <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
     body {
         background-color: #0a1929;
         color: #c0d8ff;
@@ -15,49 +13,32 @@
         padding: 20px;
         min-height: 100vh;
     }
-
-    .container {
-        max-width: 600px;
-        margin: 0 auto;
-    }
-
+    .container { max-width: 600px; margin: 0 auto; }
     .header {
         text-align: center;
         padding: 40px 0;
         border-bottom: 2px solid #4dabff;
         margin-bottom: 40px;
     }
-
     .header h1 {
         color: #4dabff;
         font-size: 32px;
         letter-spacing: 2px;
     }
-
     .dichiarazione {
         background-color: #112240;
         border: 2px solid #1e3a5f;
         border-radius: 5px;
         padding: 40px;
+        text-align: center;
         min-height: 300px;
         display: flex;
         align-items: center;
         justify-content: center;
-    }
-
-    .dichiarazione textarea {
-        width: 100%;
-        height: 220px;
-        background-color: transparent;
-        border: none;
-        resize: none;
-        outline: none;
         color: #8ab4f8;
         font-size: 18px;
         font-style: italic;
-        font-family: 'Courier New', monospace;
     }
-
     .back-btn {
         background-color: #1e3a5f;
         color: #64b5ff;
@@ -70,11 +51,7 @@
         width: 100%;
         margin-top: 30px;
     }
-
-    .back-btn:hover {
-        background-color: #2a4a7a;
-    }
-
+    .back-btn:hover { background-color: #2a4a7a; }
     .footer {
         text-align: center;
         color: #5a7eb0;
@@ -85,51 +62,33 @@
     }
 </style>
 </head>
-
 <body>
 <div class="container">
-
     <div class="header">
         <h1>GIORGIO</h1>
     </div>
-
-    <!-- FORM CON BLOCCO AUTOFILL -->
-    <form autocomplete="off">
-
-        <!-- CAMPI ESCA (ANTI CHROME / SAFARI) -->
-        <input type="text" style="display:none">
-        <input type="password" style="display:none">
-
-        <div class="dichiarazione">
-            <textarea
-                name="field_01"
-                id="alpha_01"
-                autocomplete="new-password"
-                autocorrect="off"
-                autocapitalize="off"
-                spellcheck="false"
-                placeholder="[DICHIARAZIONE DOPO LA MORTE DI FRANCESCO]"
-            ></textarea>
-        </div>
-
-    </form>
-
+    
+    <div class="dichiarazione">
+        [DICHIARAZIONE DOPO LA MORTE DI FRANCESCO]
+    </div>
+    
     <button class="back-btn" onclick="goBack()">
         ← TORNA ALL'AREA COMUNE
     </button>
-
+    
     <div class="footer">
         Federal Database • Accesso Riservato
     </div>
-
 </div>
 
 <script>
 function goBack() {
     if (document.referrer) {
+        // Torna alla pagina precedente se esiste
         window.history.back();
     } else {
-        window.location.href = 'area-comune.html';
+        // Altrimenti vai sempre alla pagina principale
+        window.location.href = 'area-comune.html'; // sostituisci con il nome della tua pagina principale
     }
 }
 </script>
