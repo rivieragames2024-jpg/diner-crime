@@ -65,6 +65,10 @@
             font-size: 16px;
             border-radius: 3px;
             margin-bottom: 15px;
+
+            /* maschera i caratteri come password
+               SENZA type="password" */
+            -webkit-text-security: disc;
         }
 
         .access-btn {
@@ -155,7 +159,20 @@
 
     <div class="access-box">
         <h2>ACCESSO AREE RISERVATE</h2>
-        <input type="password" id="passwordInput" class="password-input" placeholder="Inserire codice di accesso">
+
+        <!-- INPUT TRATTATO COME TESTO (anti password manager) -->
+        <input
+            type="text"
+            id="passwordInput"
+            class="password-input"
+            placeholder="Inserire codice di accesso"
+            autocomplete="off"
+            autocorrect="off"
+            autocapitalize="off"
+            spellcheck="false"
+            inputmode="text"
+        >
+
         <button class="access-btn" onclick="checkPassword()">ACCEDI</button>
         <div class="password-hint">I codici ignorano maiuscole e simboli</div>
         <div id="errorMsg" class="error">Accesso negato</div>
@@ -192,8 +209,8 @@
     }
 
     function checkPassword() {
-        const input = document.getElementById('passwordInput').value;
-        const password = normalizePassword(input);
+        const inputField = document.getElementById('passwordInput');
+        const password = normalizePassword(inputField.value);
         const errorMsg = document.getElementById('errorMsg');
 
         const suspectPasswords = {
@@ -225,7 +242,7 @@
         }
 
         errorMsg.style.display = 'block';
-        document.getElementById('passwordInput').value = '';
+        inputField.value = '';
 
         setTimeout(() => {
             errorMsg.style.display = 'none';
