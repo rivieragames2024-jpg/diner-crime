@@ -1,84 +1,86 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Documenti Caso Canepa</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            background-color: #0a1929;
-            color: #c0d8ff;
-            font-family: 'Courier New', monospace;
-            padding: 20px;
-            min-height: 100vh;
-        }
-        .container { max-width: 600px; margin: 0 auto; }
-        .header {
-            text-align: center;
-            padding: 40px 0;
-            border-bottom: 2px solid #ff6b6b;
-            margin-bottom: 40px;
-        }
-        .header h1 {
-            color: #ff6b6b;
-            font-size: 28px;
-            letter-spacing: 1px;
-        }
-        .documento {
-            background-color: #112240;
-            border: 2px solid #ff6b6b;
-            border-radius: 5px;
-            padding: 40px;
-            text-align: center;
-            min-height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #ff8e8e;
-            font-size: 18px;
-            font-style: italic;
-        }
-        .back-btn {
-            background-color: #1e3a5f;
-            color: #64b5ff;
-            border: 1px solid #4dabff;
-            padding: 15px 30px;
-            font-family: 'Courier New', monospace;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 3px;
-            width: 100%;
-            margin-top: 30px;
-        }
-        .back-btn:hover { background-color: #2a4a7a; }
-        .footer {
-            text-align: center;
-            color: #5a7eb0;
-            font-size: 12px;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #1e3a5f;
-        }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Documenti Relazioni Caso Canepa</title>
+<style>
+  body {
+    background-color: #0a1929;
+    color: #c0d8ff;
+    font-family: 'Courier New', monospace;
+    padding: 20px;
+    line-height: 1.6;
+  }
+  .container {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .header {
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #1e3a5f;
+    margin-bottom: 30px;
+  }
+  .header h1 {
+    color: #4dabff;
+    font-size: 28px;
+    margin-bottom: 5px;
+  }
+  .header p {
+    color: #8ab4f8;
+    font-size: 16px;
+  }
+  .doc-box {
+    background-color: #112240;
+    border: 1px solid #1e3a5f;
+    border-radius: 5px;
+    padding: 20px;
+    min-height: 200px;
+    color: #a8c7ff;
+    font-size: 14px;
+    white-space: pre-wrap;
+    overflow-y: auto;
+  }
+  .back-btn {
+    background-color: #1e3a5f;
+    color: #64b5ff;
+    border: 1px solid #4dabff;
+    padding: 12px 30px;
+    font-family: 'Courier New', monospace;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 3px;
+    margin-top: 25px;
+    display: block;
+    text-align: center;
+    width: fit-content;
+  }
+  .back-btn:hover {
+    background-color: #2a4a7a;
+  }
+</style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>DOCUMENTI CASO CANEPA #05</h1>
-        </div>
-        
-        <div class="documento">
-            [INSERIRE QUI I DOCUMENTI DEL CASO]
-        </div>
-        
-        <button class="back-btn" onclick="window.location.href='../area-comune.html'">
-            ← TORNA ALL'AREA COMUNE
-        </button>
-        
-        <div class="footer">
-            Federal Database • Documenti Investigativi • Accesso Controllato
-        </div>
+  <div class="container">
+    <div class="header">
+      <h1>Documenti Relazioni Caso Canepa</h1>
+      <p>Area riservata per la gestione dei documenti del caso</p>
     </div>
+    <div class="doc-box" contenteditable="true" spellcheck="false">
+      <!-- Qui puoi scrivere o incollare i documenti -->
+    </div>
+    <button class="back-btn" onclick="goBack()">← TORNA ALLA PAGINA COMUNE</button>
+  </div>
+
+  <script>
+    function goBack() {
+      if (document.referrer) {
+        window.history.back();
+      } else {
+        window.location.href = 'index.html'; // sostituisci con la tua pagina principale
+      }
+    }
+  </script>
 </body>
 </html>
