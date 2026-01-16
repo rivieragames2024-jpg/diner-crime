@@ -174,7 +174,7 @@
             
             <div class="doc-item">
                 <h3>NOTA DI SISTEMA</h3>
-                <p>I file riservati richiedono codici di accesso specifici. Contattare il supervisore per le credenziali necessarie.</p>
+                <p>I file riservati richiedono codici di accesso specifici. Contattare il supervisore per le credenziali necessaria.</p>
             </div>
         </div>
         
@@ -193,24 +193,24 @@
             const password = normalizePassword(input);
             const errorMsg = document.getElementById('errorMsg');
             
-            // 7 PASSWORD PER SOSPETTATI
+            // 7 PASSWORD PER SOSPETTATI - PERCORSI DIRETTI (senza cartelle)
             const suspectPasswords = {
-                'ombraverde': 'sospettati/sospettato-01.html',
-                'silenziofreddo': 'sospettati/sospettato-02.html',
-                'sanguebianco': 'sospettati/sospettato-03.html',
-                'riflessodimezzanotte': 'sospettati/sospettato-04.html',
-                'passotroppolento': 'sospettati/sospettato-05.html',
-                'echodisepolcro': 'sospettati/sospettato-06.html',
-                'vertiginedelvuoto': 'sospettati/sospettato-07.html'
+                'ombraverde': 'sospettato-01.html',
+                'silenziofreddo': 'sospettato-02.html',
+                'sanguebianco': 'sospettato-03.html',
+                'riflessodimezzanotte': 'sospettato-04.html',
+                'passotroppolento': 'sospettato-05.html',
+                'echodisepolcro': 'sospettato-06.html',
+                'vertiginedelvuoto': 'sospettato-07.html'
             };
             
-            // 5 PASSWORD PER DATI DEL CASO
+            // 5 PASSWORD PER DATI DEL CASO - PERCORSI DIRETTI (senza cartelle)
             const casePasswords = {
-                'cifrarossa': 'casi/caso-01.html',
-                'veritasepolta': 'casi/caso-02.html',
-                'labirintodispecchi': 'casi/caso-03.html',
-                'ultimosospiro': 'casi/caso-04.html',
-                'memoriacancellata': 'casi/caso-05.html'
+                'cifrarossa': 'caso-01.html',
+                'veritasepolta': 'caso-02.html',
+                'labirintodispecchi': 'caso-03.html',
+                'ultimosospiro': 'caso-04.html',
+                'memoriacancellata': 'caso-05.html'
             };
             
             // Controlla se è una password valida
