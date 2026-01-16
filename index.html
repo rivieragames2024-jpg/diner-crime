@@ -1,97 +1,144 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GIORGIO</title>
-<style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-        background-color: #0a1929;
-        color: #c0d8ff;
-        font-family: 'Courier New', monospace;
-        padding: 20px;
-        min-height: 100vh;
-    }
-    .container { max-width: 600px; margin: 0 auto; }
-    .header {
-        text-align: center;
-        padding: 40px 0;
-        border-bottom: 2px solid #4dabff;
-        margin-bottom: 40px;
-    }
-    .header h1 {
-        color: #4dabff;
-        font-size: 32px;
-        letter-spacing: 2px;
-    }
-    .dichiarazione {
-        background-color: #112240;
-        border: 2px solid #1e3a5f;
-        border-radius: 5px;
-        padding: 40px;
-        text-align: center;
-        min-height: 300px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #8ab4f8;
-        font-size: 18px;
-        font-style: italic;
-    }
-    .back-btn {
-        background-color: #1e3a5f;
-        color: #64b5ff;
-        border: 1px solid #4dabff;
-        padding: 15px 30px;
-        font-family: 'Courier New', monospace;
-        font-size: 16px;
-        cursor: pointer;
-        border-radius: 3px;
-        width: 100%;
-        margin-top: 30px;
-    }
-    .back-btn:hover { background-color: #2a4a7a; }
-    .footer {
-        text-align: center;
-        color: #5a7eb0;
-        font-size: 12px;
-        margin-top: 40px;
-        padding-top: 20px;
-        border-top: 1px solid #1e3a5f;
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Federal Database - Accesso Sicuro</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: #0a1929;
+            color: #c0d8ff;
+            font-family: 'Courier New', monospace;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .login-container {
+            width: 90%;
+            max-width: 400px;
+            background-color: #112240;
+            border: 2px solid #1e3a5f;
+            border-radius: 8px;
+            padding: 40px 30px;
+            box-shadow: 0 0 20px rgba(0, 60, 120, 0.3);
+        }
+        h1 {
+            color: #4dabff;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 24px;
+            letter-spacing: 1px;
+        }
+        .input-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            color: #8ab4f8;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        input {
+            width: 100%;
+            padding: 12px 15px;
+            background-color: #0a1929;
+            border: 1px solid #1e3a5f;
+            color: #c0d8ff;
+            font-family: 'Courier New', monospace;
+            font-size: 16px;
+            border-radius: 4px;
+        }
+        input:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        button {
+            width: 100%;
+            padding: 14px;
+            background-color: #1e3a5f;
+            color: #64b5ff;
+            border: 1px solid #4dabff;
+            font-family: 'Courier New', monospace;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #2a4a7a;
+        }
+        .error {
+            color: #ff6b6b;
+            text-align: center;
+            margin-top: 15px;
+            font-size: 14px;
+            display: none;
+        }
+        .footer {
+            text-align: center;
+            color: #5a7eb0;
+            font-size: 11px;
+            margin-top: 25px;
+            padding-top: 15px;
+            border-top: 1px solid #1e3a5f;
+        }
+    </style>
 </head>
 <body>
-<div class="container">
-    <div class="header">
-        <h1>GIORGIO</h1>
+    <div class="login-container">
+        <h1>FEDERAL DATABASE</h1>
+        
+        <div class="input-group">
+            <label>ID OPERATORE</label>
+            <input type="text" value="USR-FED-7842" disabled>
+        </div>
+        
+        <div class="input-group">
+            <label>PASSWORD</label>
+            <input type="password" id="password" placeholder="Inserire credenziali">
+        </div>
+        
+        <button onclick="login()">ACCEDI AL SISTEMA</button>
+        
+        <div id="error" class="error">
+            ACCESSO NEGATO - Credenziali non valide
+        </div>
+        
+        <div class="footer">
+            Sistema di Accesso Federale v3.4<br>
+            Tutti gli accessi vengono registrati
+        </div>
     </div>
-    
-    <div class="dichiarazione">
-        [DICHIARAZIONE DOPO LA MORTE DI FRANCESCO]
-    </div>
-    
-    <button class="back-btn" onclick="goBack()">
-        ← TORNA ALL'AREA COMUNE
-    </button>
-    
-    <div class="footer">
-        Federal Database • Accesso Riservato
-    </div>
-</div>
 
-<script>
-function goBack() {
-    if (document.referrer) {
-        // Torna alla pagina precedente se esiste
-        window.history.back();
-    } else {
-        // Altrimenti vai sempre alla pagina principale
-        window.location.href = 'area-comune.html'; // sostituisci con il nome della tua pagina principale
-    }
-}
-</script>
-
+    <script>
+        function normalize(text) {
+            return text.toLowerCase().replace(/[^a-z0-9]/g, '');
+        }
+        
+        function login() {
+            const password = normalize(document.getElementById('password').value);
+            const error = document.getElementById('error');
+            
+            if (password === 'federalaccess') {
+                window.location.href = 'area-comune.html';
+            } else {
+                error.style.display = 'block';
+                document.getElementById('password').value = '';
+                
+                setTimeout(() => {
+                    error.style.display = 'none';
+                }, 3000);
+            }
+        }
+        
+        document.getElementById('password').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                login();
+            }
+        });
+    </script>
 </body>
 </html>
