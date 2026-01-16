@@ -1,154 +1,143 @@
+
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Federal Database - Accesso Generale</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Federal Database - Accesso Generale</title>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+        background-color: #0a1929;
+        color: #c0d8ff;
+        font-family: 'Courier New', monospace;
+        padding: 20px;
+        line-height: 1.6;
+    }
 
-        body {
-            background-color: #0a1929;
-            color: #c0d8ff;
-            font-family: 'Courier New', monospace;
-            padding: 20px;
-            line-height: 1.6;
-        }
+    .container {
+        max-width: 900px;
+        margin: 0 auto;
+    }
 
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-        }
+    .header {
+        text-align: center;
+        padding: 20px 0;
+        border-bottom: 1px solid #1e3a5f;
+        margin-bottom: 30px;
+    }
 
-        .header {
-            text-align: center;
-            padding: 20px 0;
-            border-bottom: 1px solid #1e3a5f;
-            margin-bottom: 30px;
-        }
+    .header h1 {
+        color: #4dabff;
+        font-size: 24px;
+        margin-bottom: 5px;
+        letter-spacing: 1px;
+    }
 
-        .header h1 {
-            color: #4dabff;
-            font-size: 24px;
-            margin-bottom: 5px;
-            letter-spacing: 1px;
-        }
+    .header p {
+        color: #8ab4f8;
+        font-size: 14px;
+    }
 
-        .header p {
-            color: #8ab4f8;
-            font-size: 14px;
-        }
+    .access-box {
+        background-color: #112240;
+        border: 1px solid #1e3a5f;
+        border-radius: 5px;
+        padding: 25px;
+        margin-bottom: 30px;
+        text-align: center;
+    }
 
-        .access-box {
-            background-color: #112240;
-            border: 1px solid #1e3a5f;
-            border-radius: 5px;
-            padding: 25px;
-            margin-bottom: 30px;
-            text-align: center;
-        }
+    .access-box h2 {
+        color: #64b5ff;
+        margin-bottom: 20px;
+        font-size: 18px;
+    }
 
-        .access-box h2 {
-            color: #64b5ff;
-            margin-bottom: 20px;
-            font-size: 18px;
-        }
+    .password-input {
+        width: 100%;
+        padding: 12px 15px;
+        background-color: #0a1929;
+        border: 1px solid #1e3a5f;
+        color: #c0d8ff;
+        font-family: 'Courier New', monospace;
+        font-size: 16px;
+        border-radius: 3px;
+        margin-bottom: 15px;
+        -webkit-text-security: disc;
+    }
 
-        .password-input {
-            width: 100%;
-            padding: 12px 15px;
-            background-color: #0a1929;
-            border: 1px solid #1e3a5f;
-            color: #c0d8ff;
-            font-family: 'Courier New', monospace;
-            font-size: 16px;
-            border-radius: 3px;
-            margin-bottom: 15px;
+    .access-btn {
+        background-color: #1e3a5f;
+        color: #64b5ff;
+        border: 1px solid #4dabff;
+        padding: 12px 30px;
+        font-family: 'Courier New', monospace;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 3px;
+        width: 100%;
+        margin-bottom: 20px;
+    }
 
-            /* maschera i caratteri come password
-               SENZA type="password" */
-            -webkit-text-security: disc;
-        }
+    .access-btn:hover {
+        background-color: #2a4a7a;
+    }
 
-        .access-btn {
-            background-color: #1e3a5f;
-            color: #64b5ff;
-            border: 1px solid #4dabff;
-            padding: 12px 30px;
-            font-family: 'Courier New', monospace;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 3px;
-            width: 100%;
-        }
+    .password-hint {
+        color: #5a7eb0;
+        font-size: 11px;
+        text-align: center;
+        margin-bottom: 20px;
+        font-style: italic;
+    }
 
-        .access-btn:hover {
-            background-color: #2a4a7a;
-        }
+    .error {
+        color: #ff6b6b;
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 14px;
+        display: none;
+    }
 
-        .docs-section {
-            background-color: #112240;
-            border: 1px solid #1e3a5f;
-            border-radius: 5px;
-            padding: 25px;
-            margin-bottom: 30px;
-        }
+    /* Caselle personaggi */
+    .characters-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 15px;
+        margin-bottom: 40px;
+    }
 
-        .docs-section h2 {
-            color: #64b5ff;
-            margin-bottom: 20px;
-            font-size: 18px;
-            border-bottom: 1px solid #1e3a5f;
-            padding-bottom: 10px;
-        }
+    .character-card {
+        background-color: #112240;
+        border: 1px solid #1e3a5f;
+        border-radius: 5px;
+        padding: 15px;
+        color: #c0d8ff;
+        font-size: 14px;
+        line-height: 1.4;
+    }
 
-        .doc-item {
-            background-color: #0a1929;
-            border: 1px solid #1e3a5f;
-            padding: 15px;
-            margin-bottom: 15px;
-            border-radius: 3px;
-        }
+    .character-card h3 {
+        color: #64b5ff;
+        margin-bottom: 5px;
+        font-size: 16px;
+    }
 
-        .doc-item h3 {
-            color: #8ab4f8;
-            margin-bottom: 10px;
-            font-size: 16px;
-        }
+    .character-card p {
+        margin-bottom: 5px;
+    }
 
-        .doc-item p {
-            color: #a8c7ff;
-            font-size: 14px;
-        }
-
-        .footer {
-            text-align: center;
-            color: #5a7eb0;
-            font-size: 12px;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #1e3a5f;
-        }
-
-        .error {
-            color: #ff6b6b;
-            text-align: center;
-            margin-top: 10px;
-            font-size: 14px;
-            display: none;
-        }
-
-        .password-hint {
-            color: #5a7eb0;
-            font-size: 11px;
-            text-align: center;
-            margin-top: 10px;
-            font-style: italic;
-        }
-    </style>
+    .footer {
+        text-align: center;
+        color: #5a7eb0;
+        font-size: 12px;
+        padding-top: 20px;
+        border-top: 1px solid #1e3a5f;
+    }
+</style>
 </head>
-
 <body>
 <div class="container">
 
@@ -159,8 +148,6 @@
 
     <div class="access-box">
         <h2>ACCESSO AREE RISERVATE</h2>
-
-        <!-- INPUT TRATTATO COME TESTO (anti password manager) -->
         <input
             type="text"
             id="passwordInput"
@@ -170,30 +157,54 @@
             autocorrect="off"
             autocapitalize="off"
             spellcheck="false"
-            inputmode="text"
         >
-
         <button class="access-btn" onclick="checkPassword()">ACCEDI</button>
         <div class="password-hint">I codici ignorano maiuscole e simboli</div>
         <div id="errorMsg" class="error">Accesso negato</div>
     </div>
 
-    <div class="docs-section">
-        <h2>DOCUMENTI DISPONIBILI</h2>
-
-        <div class="doc-item">
-            <h3>DOSSIER #001 - PANORAMICA INIZIALE</h3>
-            <p>Rapporto preliminare sul Caso Canepa.</p>
+    <div class="characters-grid">
+        <div class="character-card">
+            <h3>Giorgio Canepa</h3>
+            <p>1966 – 60 anni</p>
+            <p>Proprietario – Capo famiglia</p>
+            <p>Fondatore e gestore della pizzeria. Racconta ai detective di aver visto Saif uscire dal magazzino poco dopo che Francesco è stato trovato senza vita.</p>
         </div>
-
-        <div class="doc-item">
-            <h3>PROTOCOLLO OPERATIVO</h3>
-            <p>Linee guida standard per le indagini federali.</p>
+        <div class="character-card">
+            <h3>Ugo Canepa</h3>
+            <p>1984 – 41 anni</p>
+            <p>Pizzaiolo – Figlio maggiore</p>
+            <p>Responsabile del forno e dell’organizzazione quotidiana. Paziente e leale, ama la famiglia e il lavoro in pizzeria.</p>
         </div>
-
-        <div class="doc-item">
-            <h3>NOTA DI SISTEMA</h3>
-            <p>I file riservati richiedono codici di accesso.</p>
+        <div class="character-card">
+            <h3>Francesco Canepa</h3>
+            <p>1988 – 37 anni</p>
+            <p>Pizzaiolo – Figlio minore</p>
+            <p>Carismatico e ambizioso, alterna lavoro e vita mondana. Vittima dell’indagine.</p>
+        </div>
+        <div class="character-card">
+            <h3>Giulia Stasiliani</h3>
+            <p>1986 – 39 anni</p>
+            <p>Sala – Amministrazione</p>
+            <p>Moglie di Ugo. Affettuosa e pragmatica, gestisce clienti, cassa e documenti amministrativi.</p>
+        </div>
+        <div class="character-card">
+            <h3>Saif</h3>
+            <p>2002 – 24 anni</p>
+            <p>Portapizze – Tuttofare</p>
+            <p>Addetto alle consegne e supporto interno. Giovane, energico, osservatore attento.</p>
+        </div>
+        <div class="character-card">
+            <h3>Michael Canepa</h3>
+            <p>2010 – 16 anni</p>
+            <p>Aiuto saltuario</p>
+            <p>Figlio adolescente, pasticcione ma curioso, sempre protetto in pizzeria.</p>
+        </div>
+        <div class="character-card">
+            <h3>Piero</h3>
+            <p>1973 – 52 anni</p>
+            <p>Fornitore esterno</p>
+            <p>Fornitore storico di farine e bevande. Apparentemente bonario, ma spesso calcolatore.</p>
         </div>
     </div>
 
@@ -204,56 +215,56 @@
 </div>
 
 <script>
-    function normalizePassword(text) {
-        return text.toLowerCase().replace(/[^a-z0-9]/g, '');
+function normalizePassword(text) {
+    return text.toLowerCase().replace(/[^a-z0-9]/g, '');
+}
+
+function checkPassword() {
+    const inputField = document.getElementById('passwordInput');
+    const password = normalizePassword(inputField.value);
+    const errorMsg = document.getElementById('errorMsg');
+
+    const suspectPasswords = {
+        'ombraverde': 'sospettato-01.html',
+        'silenziofreddo': 'sospettato-02.html',
+        'sanguebianco': 'sospettato-03.html',
+        'riflessodimezzanotte': 'sospettato-04.html',
+        'passotroppolento': 'sospettato-05.html',
+        'echodisepolcro': 'sospettato-06.html',
+        'vertiginedelvuoto': 'sospettato-07.html'
+    };
+
+    const casePasswords = {
+        'cifrarossa': 'caso-01.html',
+        'veritasepolta': 'caso-02.html',
+        'labirintodispecchi': 'caso-03.html',
+        'ultimosospiro': 'caso-04.html',
+        'memoriacancellata': 'caso-05.html'
+    };
+
+    if (suspectPasswords[password]) {
+        window.location.href = suspectPasswords[password];
+        return;
     }
 
-    function checkPassword() {
-        const inputField = document.getElementById('passwordInput');
-        const password = normalizePassword(inputField.value);
-        const errorMsg = document.getElementById('errorMsg');
-
-        const suspectPasswords = {
-            'ombraverde': 'sospettato-01.html',
-            'silenziofreddo': 'sospettato-02.html',
-            'sanguebianco': 'sospettato-03.html',
-            'riflessodimezzanotte': 'sospettato-04.html',
-            'passotroppolento': 'sospettato-05.html',
-            'echodisepolcro': 'sospettato-06.html',
-            'vertiginedelvuoto': 'sospettato-07.html'
-        };
-
-        const casePasswords = {
-            'cifrarossa': 'caso-01.html',
-            'veritasepolta': 'caso-02.html',
-            'labirintodispecchi': 'caso-03.html',
-            'ultimosospiro': 'caso-04.html',
-            'memoriacancellata': 'caso-05.html'
-        };
-
-        if (suspectPasswords[password]) {
-            window.location.href = suspectPasswords[password];
-            return;
-        }
-
-        if (casePasswords[password]) {
-            window.location.href = casePasswords[password];
-            return;
-        }
-
-        errorMsg.style.display = 'block';
-        inputField.value = '';
-
-        setTimeout(() => {
-            errorMsg.style.display = 'none';
-        }, 3000);
+    if (casePasswords[password]) {
+        window.location.href = casePasswords[password];
+        return;
     }
 
-    document.getElementById('passwordInput').addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') {
-            checkPassword();
-        }
-    });
+    errorMsg.style.display = 'block';
+    inputField.value = '';
+
+    setTimeout(() => {
+        errorMsg.style.display = 'none';
+    }, 3000);
+}
+
+document.getElementById('passwordInput').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        checkPassword();
+    }
+});
 </script>
 
 </body>
