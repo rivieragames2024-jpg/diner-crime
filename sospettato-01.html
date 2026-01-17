@@ -64,6 +64,12 @@
 </style>
 </head>
 <body>
+<script>
+  if (sessionStorage.getItem("federal_access") !== "granted") {
+    // se l’utente non ha passato la password, torna alla pagina principale
+    window.location.href = 'index.html';
+  }
+</script>
 <div class="container">
     <div class="header">
         <h1>GIORGIO</h1>
@@ -94,4 +100,3 @@ function goBack() {
 
 </body>
 </html>
-
