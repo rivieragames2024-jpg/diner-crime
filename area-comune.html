@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -6,216 +5,216 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Federal Database - Accesso Generale</title>
 <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-    body {
-        background-color: #0a1929;
-        color: #c0d8ff;
-        font-family: 'Courier New', monospace;
-        padding: 20px;
-        line-height: 1.6;
-    }
+body {
+    background-color: #0a1929;
+    color: #c0d8ff;
+    font-family: 'Courier New', monospace;
+    padding: 20px;
+    line-height: 1.6;
+}
 
-    .container {
-        max-width: 900px;
-        margin: 0 auto;
-    }
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
 
-    .header {
-        text-align: center;
-        padding: 20px 0;
-        border-bottom: 1px solid #1e3a5f;
-        margin-bottom: 30px;
-    }
+.header {
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #1e3a5f;
+    margin-bottom: 30px;
+}
 
-    .header h1 {
-        color: #4dabff;
-        font-size: 24px;
-        margin-bottom: 5px;
-        letter-spacing: 1px;
-    }
+.header h1 {
+    color: #4dabff;
+    font-size: 24px;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
 
-    .header p {
-        color: #8ab4f8;
-        font-size: 14px;
-    }
+.header p {
+    color: #8ab4f8;
+    font-size: 14px;
+}
 
-    .access-box {
-        background-color: #112240;
-        border: 1px solid #1e3a5f;
-        border-radius: 5px;
-        padding: 25px;
-        margin-bottom: 30px;
-        text-align: center;
-    }
+.access-box {
+    background-color: #112240;
+    border: 1px solid #1e3a5f;
+    border-radius: 5px;
+    padding: 25px;
+    margin-bottom: 30px;
+    text-align: center;
+}
 
-    .access-box h2 {
-        color: #64b5ff;
-        margin-bottom: 20px;
-        font-size: 18px;
-    }
+.access-box h2 {
+    color: #64b5ff;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
 
-    .password-input {
-        width: 100%;
-        padding: 12px 15px;
-        background-color: #0a1929;
-        border: 1px solid #1e3a5f;
-        color: #c0d8ff;
-        font-family: 'Courier New', monospace;
-        font-size: 16px;
-        border-radius: 3px;
-        margin-bottom: 15px;
-        -webkit-text-security: disc;
-    }
+.password-input {
+    width: 100%;
+    padding: 12px 15px;
+    background-color: #0a1929;
+    border: 1px solid #1e3a5f;
+    color: #c0d8ff;
+    font-family: 'Courier New', monospace;
+    font-size: 16px;
+    border-radius: 3px;
+    margin-bottom: 15px;
+    -webkit-text-security: disc;
+}
 
-    .access-btn {
-        background-color: #1e3a5f;
-        color: #64b5ff;
-        border: 1px solid #4dabff;
-        padding: 12px 30px;
-        font-family: 'Courier New', monospace;
-        font-size: 16px;
-        cursor: pointer;
-        border-radius: 3px;
-        width: 100%;
-        margin-bottom: 20px;
-    }
+.access-btn {
+    background-color: #1e3a5f;
+    color: #64b5ff;
+    border: 1px solid #4dabff;
+    padding: 12px 30px;
+    font-family: 'Courier New', monospace;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 3px;
+    width: 100%;
+    margin-bottom: 20px;
+}
 
-    .access-btn:hover {
-        background-color: #2a4a7a;
-    }
+.access-btn:hover {
+    background-color: #2a4a7a;
+}
 
-    .password-hint {
-        color: #5a7eb0;
-        font-size: 11px;
-        text-align: center;
-        margin-bottom: 20px;
-        font-style: italic;
-    }
+.password-hint {
+    color: #5a7eb0;
+    font-size: 11px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-style: italic;
+}
 
-    .error {
-        color: #ff6b6b;
-        text-align: center;
-        margin-bottom: 20px;
-        font-size: 14px;
-        display: none;
-    }
+.error {
+    color: #ff6b6b;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 14px;
+    display: none;
+}
 
-    .characters-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 15px;
-        margin-bottom: 40px;
-    }
+/* Personaggi */
+.characters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin-bottom: 40px;
+}
 
-    .character-card {
-        background-color: #112240;
-        border: 1px solid #1e3a5f;
-        border-radius: 5px;
-        padding: 15px;
-        color: #c0d8ff;
-        font-size: 14px;
-        line-height: 1.4;
-    }
+.character-card {
+    background-color: #112240;
+    border: 1px solid #1e3a5f;
+    border-radius: 5px;
+    padding: 15px;
+    font-size: 14px;
+}
 
-    .character-card h3 {
-        color: #64b5ff;
-        margin-bottom: 5px;
-        font-size: 16px;
-    }
+.character-card h3 {
+    color: #64b5ff;
+    margin-bottom: 5px;
+}
 
-    .character-card p {
-        margin-bottom: 5px;
-    }
+.character-card p {
+    margin-bottom: 5px;
+}
 
-    .footer {
-        text-align: center;
-        color: #5a7eb0;
-        font-size: 12px;
-        padding-top: 20px;
-        border-top: 1px solid #1e3a5f;
-    }
+.footer {
+    text-align: center;
+    color: #5a7eb0;
+    font-size: 12px;
+    padding-top: 20px;
+    border-top: 1px solid #1e3a5f;
+}
 </style>
 </head>
+
 <body>
 <div class="container">
 
-    <div class="header">
-        <h1>FEDERAL DATABASE ACCESS</h1>
-        <p>Clearance Level: STANDARD</p>
+<div class="header">
+    <h1>FEDERAL DATABASE ACCESS</h1>
+    <p>Clearance Level: STANDARD</p>
+</div>
+
+<div class="access-box">
+    <h2>ACCESSO AREE RISERVATE</h2>
+
+    <input
+        type="text"
+        id="passwordInput"
+        class="password-input"
+        placeholder="Inserire codice di accesso"
+        autocomplete="off"
+        spellcheck="false"
+    >
+
+    <button class="access-btn" onclick="checkPassword()">ACCEDI</button>
+
+    <div class="password-hint">I codici ignorano maiuscole e simboli</div>
+    <div id="errorMsg" class="error">Accesso negato</div>
+</div>
+
+<div class="characters-grid">
+    <div class="character-card">
+        <h3>1. GIORGIO CANEPA</h3>
+        <p>Nato a Genova il 18-09-1966</p>
+        <p>Proprietario – Capo famiglia</p>
+        <p>Fondatore e gestore della pizzeria. Persona appassionata e metodica, legata alla tradizione e alla qualità. Padre di Francesco e Ugo, nonno di Michael.</p>
     </div>
 
-    <div class="access-box">
-        <h2>ACCESSO AREE RISERVATE</h2>
-        <input
-            type="text"
-            id="passwordInput"
-            class="password-input"
-            placeholder="Inserire codice di accesso"
-            autocomplete="off"
-            autocorrect="off"
-            autocapitalize="off"
-            spellcheck="false"
-        >
-        <button class="access-btn" onclick="checkPassword()">ACCEDI</button>
-        <div class="password-hint">I codici ignorano maiuscole e simboli</div>
-        <div id="errorMsg" class="error">Accesso negato</div>
+    <div class="character-card">
+        <h3>2. UGO CANEPA</h3>
+        <p>Nato a Genova il 12-06-1984</p>
+        <p>Pizzaiolo – Figlio maggiore</p>
+        <p>Responsabile del forno e dell’organizzazione quotidiana. Paziente, affettuoso e leale verso la famiglia.</p>
     </div>
 
-    <div class="characters-grid">
-        <div class="character-card">
-            <h3>1. GIORGIO CANEPA</h3>
-            <p>Nato a Genova il 18-09-1966</p>
-            <p>Proprietario – Capo famiglia</p>
-            <p>Fondatore e gestore della pizzeria. Persona appassionata e metodica, legata alla tradizione e alla qualità. Padre di Francesco e Ugo, nonno di Michael.</p>
-        </div>
-
-        <div class="character-card">
-            <h3>2. UGO CANEPA</h3>
-            <p>Nato a Genova il 12-06-1984</p>
-            <p>Pizzaiolo – Figlio maggiore</p>
-            <p>Responsabile del forno e dell’organizzazione quotidiana. Paziente, affettuoso e leale verso la famiglia, con forte senso di responsabilità.</p>
-        </div>
-
-        <div class="character-card">
-            <h3>3. FRANCESCO CANEPA</h3>
-            <p>Nato a Genova il 02-02-1988</p>
-            <p>Pizzaiolo – Figlio minore</p>
-            <p>Carismatico e ambizioso. Alterna il lavoro in pizzeria a una vita mondana fatta di lusso e leggerezza. Vittima dell’indagine.</p>
-        </div>
-
-        <div class="character-card">
-            <h3>4. GIULIA STASILIANI</h3>
-            <p>Nata a Chiavari il 20-05-1986</p>
-            <p>Sala – Amministrazione</p>
-            <p>Moglie di Ugo. Gestisce clienti, cassa e documenti. Affettuosa, pragmatica, tende a mediare per mantenere l’equilibrio familiare.</p>
-        </div>
-
-        <div class="character-card">
-            <h3>5. SAIF MEZIANE</h3>
-            <p>Nato ad Algeri il 27-12-2002</p>
-            <p>Portapizze – Tuttofare</p>
-            <p>Addetto alle consegne e supporto interno. Giovane, energico e osservatore attento, sensibile alle ingiustizie.</p>
-        </div>
-
-        <div class="character-card">
-            <h3>6. MICHAEL CANEPA</h3>
-            <p>Nato a Genova il 01-09-2010</p>
-            <p>Aiuto saltuario</p>
-            <p>Figlio adolescente, pasticcione ma curioso. Sempre protetto all’interno della pizzeria, considerato intoccabile dalla famiglia.</p>
-        </div>
-
-        <div class="character-card">
-            <h3>7. PIERO</h3>
-            <p>Nato a Lodi il 31-03-1973</p>
-            <p>Fornitore esterno</p>
-            <p>Fornitore storico di farine e bevande. Apparentemente bonario, ma con un atteggiamento spesso calcolatore.</p>
-        </div>
+    <div class="character-card">
+        <h3>3. FRANCESCO CANEPA</h3>
+        <p>Nato a Genova il 02-02-1988</p>
+        <p>Pizzaiolo – Figlio minore</p>
+        <p>Carismatico e ambizioso. Alterna il lavoro in pizzeria a una vita mondana. Vittima dell’indagine.</p>
     </div>
 
-    <div class="footer">
-        Federal Intelligence System • Database v3.4 • Accesso Registrato
+    <div class="character-card">
+        <h3>4. GIULIA STASILIANI</h3>
+        <p>Nata a Chiavari il 20-05-1986</p>
+        <p>Sala – Amministrazione</p>
+        <p>Moglie di Ugo. Gestisce clienti, cassa e documenti. Affettuosa e pragmatica.</p>
     </div>
+
+    <div class="character-card">
+        <h3>5. SAIF MEZIANE</h3>
+        <p>Nato ad Algeri il 27-12-2002</p>
+        <p>Portapizze – Tuttofare</p>
+        <p>Addetto alle consegne e supporto interno. Giovane, energico e osservatore attento.</p>
+    </div>
+
+    <div class="character-card">
+        <h3>6. MICHAEL CANEPA</h3>
+        <p>Nato a Genova il 01-09-2010</p>
+        <p>Aiuto saltuario</p>
+        <p>Figlio adolescente, pasticcione ma curioso, sempre protetto in pizzeria.</p>
+    </div>
+
+    <div class="character-card">
+        <h3>7. PIERO</h3>
+        <p>Nato a Lodi il 31-03-1973</p>
+        <p>Fornitore esterno</p>
+        <p>Fornitore storico di farine e bevande. Apparentemente bonario, ma spesso calcolatore.</p>
+    </div>
+</div>
+
+<div class="footer">
+    Federal Intelligence System • Database v3.4 • Accesso Registrato
+</div>
 
 </div>
 
@@ -225,9 +224,9 @@ function normalizePassword(text) {
 }
 
 function checkPassword() {
-    const inputField = document.getElementById('passwordInput');
-    const password = normalizePassword(inputField.value);
-    const errorMsg = document.getElementById('errorMsg');
+    const input = document.getElementById('passwordInput');
+    const error = document.getElementById('errorMsg');
+    const password = normalizePassword(input.value);
 
     const suspectPasswords = {
         'ombraverde': 'sospettato-01.html',
@@ -248,27 +247,27 @@ function checkPassword() {
     };
 
     if (suspectPasswords[password]) {
+        sessionStorage.setItem("federal_access", "granted");
         window.location.href = suspectPasswords[password];
         return;
     }
 
     if (casePasswords[password]) {
+        sessionStorage.setItem("federal_access", "granted");
         window.location.href = casePasswords[password];
         return;
     }
 
-    errorMsg.style.display = 'block';
-    inputField.value = '';
+    error.style.display = 'block';
+    input.value = '';
 
     setTimeout(() => {
-        errorMsg.style.display = 'none';
+        error.style.display = 'none';
     }, 3000);
 }
 
-document.getElementById('passwordInput').addEventListener('keypress', function(e) {
-    if (e.key === 'Enter') {
-        checkPassword();
-    }
+document.getElementById('passwordInput').addEventListener('keypress', e => {
+    if (e.key === 'Enter') checkPassword();
 });
 </script>
 
