@@ -1,271 +1,114 @@
+<div class="characters-grid">
 
-<!DOCTYPE html>
-<html lang="it">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Federal Database - Accesso Generale</title>
-<style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-        background-color: #0a1929;
-        color: #c0d8ff;
-        font-family: 'Courier New', monospace;
-        padding: 20px;
-        line-height: 1.6;
-    }
-
-    .container {
-        max-width: 900px;
-        margin: 0 auto;
-    }
-
-    .header {
-        text-align: center;
-        padding: 20px 0;
-        border-bottom: 1px solid #1e3a5f;
-        margin-bottom: 30px;
-    }
-
-    .header h1 {
-        color: #4dabff;
-        font-size: 24px;
-        margin-bottom: 5px;
-        letter-spacing: 1px;
-    }
-
-    .header p {
-        color: #8ab4f8;
-        font-size: 14px;
-    }
-
-    .access-box {
-        background-color: #112240;
-        border: 1px solid #1e3a5f;
-        border-radius: 5px;
-        padding: 25px;
-        margin-bottom: 30px;
-        text-align: center;
-    }
-
-    .access-box h2 {
-        color: #64b5ff;
-        margin-bottom: 20px;
-        font-size: 18px;
-    }
-
-    .password-input {
-        width: 100%;
-        padding: 12px 15px;
-        background-color: #0a1929;
-        border: 1px solid #1e3a5f;
-        color: #c0d8ff;
-        font-family: 'Courier New', monospace;
-        font-size: 16px;
-        border-radius: 3px;
-        margin-bottom: 15px;
-        -webkit-text-security: disc;
-    }
-
-    .access-btn {
-        background-color: #1e3a5f;
-        color: #64b5ff;
-        border: 1px solid #4dabff;
-        padding: 12px 30px;
-        font-family: 'Courier New', monospace;
-        font-size: 16px;
-        cursor: pointer;
-        border-radius: 3px;
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .access-btn:hover {
-        background-color: #2a4a7a;
-    }
-
-    .password-hint {
-        color: #5a7eb0;
-        font-size: 11px;
-        text-align: center;
-        margin-bottom: 20px;
-        font-style: italic;
-    }
-
-    .error {
-        color: #ff6b6b;
-        text-align: center;
-        margin-bottom: 20px;
-        font-size: 14px;
-        display: none;
-    }
-
-    /* Caselle personaggi */
-    .characters-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 15px;
-        margin-bottom: 40px;
-    }
-
-    .character-card {
-        background-color: #112240;
-        border: 1px solid #1e3a5f;
-        border-radius: 5px;
-        padding: 15px;
-        color: #c0d8ff;
-        font-size: 14px;
-        line-height: 1.4;
-    }
-
-    .character-card h3 {
-        color: #64b5ff;
-        margin-bottom: 5px;
-        font-size: 16px;
-    }
-
-    .character-card p {
-        margin-bottom: 5px;
-    }
-
-    .footer {
-        text-align: center;
-        color: #5a7eb0;
-        font-size: 12px;
-        padding-top: 20px;
-        border-top: 1px solid #1e3a5f;
-    }
-</style>
-</head>
-<body>
-<div class="container">
-
-    <div class="header">
-        <h1>FEDERAL DATABASE ACCESS</h1>
-        <p>Clearance Level: STANDARD</p>
+    <div class="character-card">
+        <h3>1. GIORGIO CANEPA</h3>
+        <p>Nato a Genova il 18-09-1966</p>
+        <p>Proprietario – Capo famiglia</p>
+        <p>Fondatore e gestore della pizzeria.</p>
+        <p>
+            È una persona appassionata e metodica, profondamente legata alla tradizione e alla qualità della sua cucina.
+            Ama il lavoro ben fatto e non scende a compromessi sugli ingredienti, né sui prezzi, mantenendo la filosofia
+            di un locale “onesto e sincero”.
+        </p>
+        <p>
+            La sua dedizione alla pizzeria è evidente, così come il suo amore per la famiglia: è padre di Francesco e Ugo,
+            e nonno di Michael, con cui ha un legame affettuoso.
+        </p>
     </div>
 
-    <div class="access-box">
-        <h2>ACCESSO AREE RISERVATE</h2>
-        <input
-            type="text"
-            id="passwordInput"
-            class="password-input"
-            placeholder="Inserire codice di accesso"
-            autocomplete="off"
-            autocorrect="off"
-            autocapitalize="off"
-            spellcheck="false"
-        >
-        <button class="access-btn" onclick="checkPassword()">ACCEDI</button>
-        <div class="password-hint">I codici ignorano maiuscole e simboli</div>
-        <div id="errorMsg" class="error">Accesso negato</div>
+    <div class="character-card">
+        <h3>2. UGO CANEPA</h3>
+        <p>Nato a Genova il 12-06-1984</p>
+        <p>Pizzaiolo – Figlio maggiore</p>
+        <p>
+            Lavora stabilmente in pizzeria. Responsabile del forno e dell’organizzazione quotidiana.
+        </p>
+        <p>
+            Ama profondamente la famiglia e il lavoro in pizzeria. È paziente e affettuoso con il figlio Michael,
+            pur trovandolo pasticcione e irrequieto.
+        </p>
+        <p>
+            È leale verso la moglie Giulia e verso il padre, cercando sempre di fare il suo meglio senza creare tensioni.
+            Ha un forte senso di responsabilità e un grande talento per la cucina, che gli è stato trasmesso dal padre.
+        </p>
     </div>
 
-    <div class="characters-grid">
-        <div class="character-card">
-            <h3>Giorgio Canepa</h3>
-            <p>1966 – 60 anni</p>
-            <p>Proprietario – Capo famiglia</p>
-            <p>Fondatore e gestore della pizzeria. Racconta ai detective di aver visto Saif uscire dal magazzino poco dopo che Francesco è stato trovato senza vita.</p>
-        </div>
-        <div class="character-card">
-            <h3>Ugo Canepa</h3>
-            <p>1984 – 41 anni</p>
-            <p>Pizzaiolo – Figlio maggiore</p>
-            <p>Responsabile del forno e dell’organizzazione quotidiana. Paziente e leale, ama la famiglia e il lavoro in pizzeria.</p>
-        </div>
-        <div class="character-card">
-            <h3>Francesco Canepa</h3>
-            <p>1988 – 37 anni</p>
-            <p>Pizzaiolo – Figlio minore</p>
-            <p>Carismatico e ambizioso, alterna lavoro e vita mondana. Vittima dell’indagine.</p>
-        </div>
-        <div class="character-card">
-            <h3>Giulia Stasiliani</h3>
-            <p>1986 – 39 anni</p>
-            <p>Sala – Amministrazione</p>
-            <p>Moglie di Ugo. Affettuosa e pragmatica, gestisce clienti, cassa e documenti amministrativi.</p>
-        </div>
-        <div class="character-card">
-            <h3>Saif</h3>
-            <p>2002 – 24 anni</p>
-            <p>Portapizze – Tuttofare</p>
-            <p>Addetto alle consegne e supporto interno. Giovane, energico, osservatore attento.</p>
-        </div>
-        <div class="character-card">
-            <h3>Michael Canepa</h3>
-            <p>2010 – 16 anni</p>
-            <p>Aiuto saltuario</p>
-            <p>Figlio adolescente, pasticcione ma curioso, sempre protetto in pizzeria.</p>
-        </div>
-        <div class="character-card">
-            <h3>Piero</h3>
-            <p>1973 – 52 anni</p>
-            <p>Fornitore esterno</p>
-            <p>Fornitore storico di farine e bevande. Apparentemente bonario, ma spesso calcolatore.</p>
-        </div>
+    <div class="character-card">
+        <h3>3. FRANCESCO CANEPA</h3>
+        <p>Nato a Genova il 02-02-1988</p>
+        <p>Pizzaiolo – Figlio minore</p>
+        <p>Carismatico e ambizioso. Alterna il lavoro in pizzeria a una vita mondana.</p>
+        <p>La vittima dell’indagine.</p>
+        <p>
+            Vive la vita con più leggerezza rispetto al fratello: auto, moto, vacanze costose sono il suo mantra.
+            Ama il bello della vita e cerca sempre nuovi modi per godersi il successo.
+        </p>
     </div>
 
-    <div class="footer">
-        Federal Intelligence System • Database v3.4 • Accesso Registrato
+    <div class="character-card">
+        <h3>4. GIULIA STASILIANI</h3>
+        <p>Nata a Chiavari il 20-05-1986</p>
+        <p>Sala – Amministrazione</p>
+        <p>
+            Moglie di Ugo. Gestisce clienti, cassa e documenti amministrativi.
+            Molto presente nel locale.
+        </p>
+        <p>
+            Giulia è genovese di nascita, con padre romano. Ama profondamente Ugo e il figlio Michael,
+            che adora e protegge.
+        </p>
+        <p>
+            È affettuosa, paziente e pragmatica, non ama i conflitti diretti, preferendo mediare
+            e mantenere l’equilibrio familiare.
+        </p>
+    </div>
+
+    <div class="character-card">
+        <h3>5. SAIF MEZIANE</h3>
+        <p>Nato ad Algeri il 27-12-2002</p>
+        <p>Portapizze – Tuttofare</p>
+        <p>
+            Addetto alle consegne e supporto interno.
+            Osservatore attento, conosce bene i movimenti del locale.
+        </p>
+        <p>
+            Saif è un ragazzo giovane, energico e laborioso, sempre pronto a dare una mano in cucina o in sala.
+            Viene dall’Algeria e si è integrato bene nel piccolo team familiare.
+        </p>
+        <p>
+            Ha uno sguardo attento e curioso, si dà da fare senza lamentarsi,
+            ma è molto sensibile alle ingiustizie.
+        </p>
+    </div>
+
+    <div class="character-card">
+        <h3>6. MICHAEL CANEPA</h3>
+        <p>Nato a Genova il 01-09-2010</p>
+        <p>Aiuto saltuario</p>
+        <p>Figlio adolescente, presente spesso in cucina e in sala.</p>
+        <p>Pasticcione ma curioso.</p>
+        <p>
+            Michael ha 16 anni ed è il più giovane volto della pizzeria di famiglia.
+            Dentro quelle mura è sempre protetto, anche quando l’errore è evidente,
+            ma nessuno osa toccarlo davvero.
+        </p>
+        <p>
+            In quella famiglia, Michael è intoccabile.
+        </p>
+    </div>
+
+    <div class="character-card">
+        <h3>7. PIERO</h3>
+        <p>Nato a Lodi il 31-03-1973</p>
+        <p>Fornitore esterno</p>
+        <p>Fornitore storico di farine e bevande.</p>
+        <p>
+            Piero è un uomo dall’aria apparentemente bonaria, sempre vestito in modo semplice ma curato.
+            Sorride facilmente, ma il suo sorriso è spesso calcolato.
+        </p>
+        <p>
+            Si presenta come “amico di famiglia”, soprattutto di Giorgio.
+        </p>
     </div>
 
 </div>
-
-<script>
-function normalizePassword(text) {
-    return text.toLowerCase().replace(/[^a-z0-9]/g, '');
-}
-
-function checkPassword() {
-    const inputField = document.getElementById('passwordInput');
-    const password = normalizePassword(inputField.value);
-    const errorMsg = document.getElementById('errorMsg');
-
-    const suspectPasswords = {
-        'ombraverde': 'sospettato-01.html',
-        'silenziofreddo': 'sospettato-02.html',
-        'sanguebianco': 'sospettato-03.html',
-        'riflessodimezzanotte': 'sospettato-04.html',
-        'passotroppolento': 'sospettato-05.html',
-        'echodisepolcro': 'sospettato-06.html',
-        'vertiginedelvuoto': 'sospettato-07.html'
-    };
-
-    const casePasswords = {
-        'cifrarossa': 'caso-01.html',
-        'veritasepolta': 'caso-02.html',
-        'labirintodispecchi': 'caso-03.html',
-        'ultimosospiro': 'caso-04.html',
-        'memoriacancellata': 'caso-05.html'
-    };
-
-    if (suspectPasswords[password]) {
-        window.location.href = suspectPasswords[password];
-        return;
-    }
-
-    if (casePasswords[password]) {
-        window.location.href = casePasswords[password];
-        return;
-    }
-
-    errorMsg.style.display = 'block';
-    inputField.value = '';
-
-    setTimeout(() => {
-        errorMsg.style.display = 'none';
-    }, 3000);
-}
-
-document.getElementById('passwordInput').addEventListener('keypress', function(e) {
-    if (e.key === 'Enter') {
-        checkPassword();
-    }
-});
-</script>
-
-</body>
-</html>
