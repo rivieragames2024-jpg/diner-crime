@@ -5,62 +5,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GIORGIO</title>
 <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-        background-color: #0a1929;
-        color: #c0d8ff;
-        font-family: 'Courier New', monospace;
-        padding: 20px;
-        min-height: 100vh;
-    }
-    .container { max-width: 600px; margin: 0 auto; }
-    .header {
-        text-align: center;
-        padding: 40px 0;
-        border-bottom: 2px solid #4dabff;
-        margin-bottom: 40px;
-    }
-    .header h1 {
-        color: #4dabff;
-        font-size: 32px;
-        letter-spacing: 2px;
-    }
-    .dichiarazione {
-        background-color: #112240;
-        border: 2px solid #1e3a5f;
-        border-radius: 5px;
-        padding: 40px;
-        text-align: left;
-        min-height: 300px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        color: #8ab4f8;
-        font-size: 18px;
-        font-style: italic;
-        line-height: 1.6;
-    }
-    .back-btn {
-        background-color: #1e3a5f;
-        color: #64b5ff;
-        border: 1px solid #4dabff;
-        padding: 15px 30px;
-        font-family: 'Courier New', monospace;
-        font-size: 16px;
-        cursor: pointer;
-        border-radius: 3px;
-        width: 100%;
-        margin-top: 30px;
-    }
-    .back-btn:hover { background-color: #2a4a7a; }
-    .footer {
-        text-align: center;
-        color: #5a7eb0;
-        font-size: 12px;
-        margin-top: 40px;
-        padding-top: 20px;
-        border-top: 1px solid #1e3a5f;
-    }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background-color: #0a1929; color: #c0d8ff; font-family: 'Courier New', monospace; padding: 20px; min-height: 100vh; }
+.container { max-width: 600px; margin: 0 auto; }
+.header { text-align: center; padding: 40px 0; border-bottom: 2px solid #4dabff; margin-bottom: 40px; }
+.header h1 { color: #4dabff; font-size: 32px; letter-spacing: 2px; }
+.dichiarazione {
+    background-color: #112240;
+    border: 2px solid #1e3a5f;
+    border-radius: 5px;
+    padding: 40px;
+    text-align: left;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #8ab4f8;
+    font-size: 18px;
+    font-style: italic;
+    line-height: 1.6;
+}
+.back-btn { background-color: #1e3a5f; color: #64b5ff; border: 1px solid #4dabff; padding: 15px 30px; font-family: 'Courier New', monospace; font-size: 16px; cursor: pointer; border-radius: 3px; width: 100%; margin-top: 30px; }
+.back-btn:hover { background-color: #2a4a7a; }
+.footer { text-align: center; color: #5a7eb0; font-size: 12px; margin-top: 40px; padding-top: 20px; border-top: 1px solid #1e3a5f; }
 </style>
 </head>
 <body>
@@ -68,7 +35,9 @@
 <!-- Controllo sicurezza -->
 <script>
 document.addEventListener("DOMContentLoaded", function() {
+    console.log("Chiave federal_access:", localStorage.getItem("federal_access"));
     if (localStorage.getItem("federal_access") !== "granted") {
+        console.log("Redirect a area-comune.html");
         window.location.href = "area-comune.html";
     }
 });
@@ -83,9 +52,7 @@ document.addEventListener("DOMContentLoaded", function() {
         <p><strong>Giorgio Canepa</strong> racconta ai detective che ha visto <strong>Saif</strong> uscire dal magazzino poco dopo che <strong>Francesco</strong> è stato trovato senza vita.</p>
     </div>
     
-    <button class="back-btn" onclick="goBack()">
-        ← TORNA ALL'AREA COMUNE
-    </button>
+    <button class="back-btn" onclick="goBack()">← TORNA ALL'AREA COMUNE</button>
     
     <div class="footer">
         Federal Database • Accesso Riservato
