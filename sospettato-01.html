@@ -65,13 +65,13 @@
 </head>
 <body>
 <script>
-  window.onload = function() {
-    if (sessionStorage.getItem("federal_access") !== "granted") {
-      window.location.href = "index.html";
+window.onload = function() {
+    if (localStorage.getItem("federal_access") !== "granted") {
+        window.location.href = "area-comune.html";
     }
-  }
-</script>
-<div class="container">
+}
+<script>
+  <div class="container">
     <div class="header">
         <h1>GIORGIO</h1>
     </div>
@@ -101,6 +101,7 @@ function goBack() {
 
 </body>
 </html>
+
 
 
 
