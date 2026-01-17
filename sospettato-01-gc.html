@@ -1,4 +1,97 @@
-<div class="dichiarazione">
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Deposizione Giorgio Canepa</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background-color: #0a1929;
+  color: #c0d8ff;
+  font-family: 'Courier New', monospace;
+  padding: 20px;
+  min-height: 100vh;
+}
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.header {
+  text-align: center;
+  padding: 40px 0;
+  border-bottom: 2px solid #4dabff;
+  margin-bottom: 40px;
+}
+.header h1 {
+  color: #4dabff;
+  font-size: 32px;
+  letter-spacing: 2px;
+}
+.dichiarazione {
+  background-color: #112240;
+  border: 2px solid #1e3a5f;
+  border-radius: 5px;
+  padding: 40px;
+  text-align: left;
+  min-height: 300px;
+  color: #8ab4f8;
+  font-size: 18px;
+  font-style: italic;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.dichiarazione p {
+  margin-bottom: 10px;
+}
+.dichiarazione strong {
+  font-weight: bold;
+  color: #c0d8ff;
+}
+.back-btn {
+  background-color: #1e3a5f;
+  color: #64b5ff;
+  border: 1px solid #4dabff;
+  padding: 15px 30px;
+  font-family: 'Courier New', monospace;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 3px;
+  width: 100%;
+  margin-top: 30px;
+}
+.back-btn:hover {
+  background-color: #2a4a7a;
+}
+.footer {
+  text-align: center;
+  color: #5a7eb0;
+  font-size: 12px;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #1e3a5f;
+}
+</style>
+</head>
+<body>
+
+<!-- Controllo sicurezza -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  if (localStorage.getItem("federal_access") !== "granted") {
+    window.location.href = "area-comune.html";
+  }
+});
+</script>
+
+<div class="container">
+  <div class="header">
+    <h1>Deposizione Giorgio Canepa</h1>
+  </div>
+
+  <div class="dichiarazione">
     <p><strong>Intervistatore:</strong> Signor Canepa, può dirmi il suo nome completo e la sua età, per favore?</p>
     <p><strong>Giorgio Canepa:</strong> Giorgio Canepa, 60 anni.</p>
 
@@ -25,4 +118,24 @@
 
     <p><strong>Intervistatore:</strong> C’è un motivo per cui dovremmo ritenere che lei ci abbia riferito tutti i fatti senza omettere nulla?</p>
     <p><strong>Giorgio Canepa:</strong> Ho perso un figlio. Non ho alcun interesse a nascondere la verità. Voglio solo che si capisca cosa è successo davvero e se qualcuno ha approfittato della nostra fiducia. La mia priorità è far emergere la verità per proteggere la famiglia e la pizzeria.</p>
+  </div>
+
+  <button class="back-btn" onclick="goBack()">← TORNA ALL'AREA COMUNE</button>
+
+  <div class="footer">
+    Federal Database • Accesso Riservato
+  </div>
 </div>
+
+<script>
+function goBack() {
+  if (document.referrer) {
+    window.history.back();
+  } else {
+    window.location.href = 'area-comune.html';
+  }
+}
+</script>
+
+</body>
+</html>
