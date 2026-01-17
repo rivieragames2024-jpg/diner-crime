@@ -41,6 +41,7 @@
     font-size: 14px;
     white-space: pre-wrap;
     overflow-y: auto;
+    max-height: 500px;
   }
   .back-btn {
     background-color: #1e3a5f;
@@ -55,9 +56,18 @@
     display: block;
     text-align: center;
     width: fit-content;
+    transition: background-color 0.3s, transform 0.2s;
   }
   .back-btn:hover {
     background-color: #2a4a7a;
+    transform: scale(1.05);
+  }
+  .doc-box img {
+    max-width: 100%;
+    border: 1px solid #4dabff;
+    margin: 10px 0;
+    border-radius: 3px;
+    display: block;
   }
 </style>
 </head>
@@ -67,8 +77,31 @@
       <h1>Documenti Relazioni Caso Canepa</h1>
       <p>Area riservata per la gestione dei documenti del caso</p>
     </div>
-    <div class="doc-box" contenteditable="true" spellcheck="false">
-      <!-- Qui puoi scrivere o incollare i documenti -->
+    <div class="doc-box" contenteditable="true" spellcheck="false" aria-label="Area documenti del caso Canepa">
+PROVA SCIENTIFICA – ACCESSO FEDERALE  
+Fonte: Reparto Scientifica – sequestro locale  
+Stato dell’indagine: Rilevamenti iniziali completati  
+Accesso: Disponibile a tutti i detective tramite sito federale delle prove  
+
+📸 Materiale disponibile  
+- 1 fotografia del cadavere, coperto da telo termico  
+- 1 breve relazione preliminare del medico legale  
+- Uno schizzo di una mappa per collocare la posizione del cadavere  
+
+<img src="immagine01.png" alt="Fotografia cadavere coperto da telo termico" />
+
+🧾 Relazione preliminare – Medico legale  
+Ora del decesso: stimata intorno alle 18:45  
+Posizione del corpo: Il cadavere è stato rinvenuto disteso in posizione supina  
+Luogo del ritrovamento: Zona posteriore al bancone della pizzeria, nei pressi delle scale che conducono al magazzino, area adibita allo stoccaggio di:  
+- cartoni per l’asporto  
+- sacchetti  
+- generi di primo utilizzo  
+
+Prima ipotesi sulla causa della morte:  
+In base a una prima ricostruzione, il decesso sembrerebbe riconducibile a un’emorragia cerebrale  
+
+Nota: La causa non è ancora definitiva e potrà essere confermata o smentita da ulteriori accertamenti.
     </div>
     <button class="back-btn" onclick="goBack()">← TORNA ALLA PAGINA COMUNE</button>
   </div>
@@ -84,5 +117,3 @@
   </script>
 </body>
 </html>
-
-
