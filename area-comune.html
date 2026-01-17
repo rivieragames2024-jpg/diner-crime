@@ -6,7 +6,6 @@
 <title>Federal Database - Accesso Generale</title>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
-
 body {
     background-color: #0a1929;
     color: #c0d8ff;
@@ -14,31 +13,10 @@ body {
     padding: 20px;
     line-height: 1.6;
 }
-
-.container {
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.header {
-    text-align: center;
-    padding: 20px 0;
-    border-bottom: 1px solid #1e3a5f;
-    margin-bottom: 30px;
-}
-
-.header h1 {
-    color: #4dabff;
-    font-size: 24px;
-    margin-bottom: 5px;
-    letter-spacing: 1px;
-}
-
-.header p {
-    color: #8ab4f8;
-    font-size: 14px;
-}
-
+.container { max-width: 900px; margin: 0 auto; }
+.header { text-align: center; padding: 20px 0; border-bottom: 1px solid #1e3a5f; margin-bottom: 30px; }
+.header h1 { color: #4dabff; font-size: 24px; margin-bottom: 5px; letter-spacing: 1px; }
+.header p { color: #8ab4f8; font-size: 14px; }
 .access-box {
     background-color: #112240;
     border: 1px solid #1e3a5f;
@@ -47,13 +25,7 @@ body {
     margin-bottom: 30px;
     text-align: center;
 }
-
-.access-box h2 {
-    color: #64b5ff;
-    margin-bottom: 20px;
-    font-size: 18px;
-}
-
+.access-box h2 { color: #64b5ff; margin-bottom: 20px; font-size: 18px; }
 .password-input {
     width: 100%;
     padding: 12px 15px;
@@ -66,7 +38,6 @@ body {
     margin-bottom: 15px;
     -webkit-text-security: disc;
 }
-
 .access-btn {
     background-color: #1e3a5f;
     color: #64b5ff;
@@ -79,27 +50,9 @@ body {
     width: 100%;
     margin-bottom: 20px;
 }
-
-.access-btn:hover {
-    background-color: #2a4a7a;
-}
-
-.password-hint {
-    color: #5a7eb0;
-    font-size: 11px;
-    text-align: center;
-    margin-bottom: 20px;
-    font-style: italic;
-}
-
-.error {
-    color: #ff6b6b;
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 14px;
-    display: none;
-}
-
+.access-btn:hover { background-color: #2a4a7a; }
+.password-hint { color: #5a7eb0; font-size: 11px; text-align: center; margin-bottom: 20px; font-style: italic; }
+.error { color: #ff6b6b; text-align: center; margin-bottom: 20px; font-size: 14px; display: none; }
 /* Personaggi */
 .characters-grid {
     display: grid;
@@ -107,7 +60,6 @@ body {
     gap: 15px;
     margin-bottom: 40px;
 }
-
 .character-card {
     background-color: #112240;
     border: 1px solid #1e3a5f;
@@ -115,26 +67,11 @@ body {
     padding: 15px;
     font-size: 14px;
 }
-
-.character-card h3 {
-    color: #64b5ff;
-    margin-bottom: 5px;
-}
-
-.character-card p {
-    margin-bottom: 5px;
-}
-
-.footer {
-    text-align: center;
-    color: #5a7eb0;
-    font-size: 12px;
-    padding-top: 20px;
-    border-top: 1px solid #1e3a5f;
-}
+.character-card h3 { color: #64b5ff; margin-bottom: 5px; }
+.character-card p { margin-bottom: 5px; }
+.footer { text-align: center; color: #5a7eb0; font-size: 12px; padding-top: 20px; border-top: 1px solid #1e3a5f; }
 </style>
 </head>
-
 <body>
 <div class="container">
 
@@ -146,14 +83,7 @@ body {
 <div class="access-box">
     <h2>ACCESSO AREE RISERVATE</h2>
 
-    <input
-        type="text"
-        id="passwordInput"
-        class="password-input"
-        placeholder="Inserire codice di accesso"
-        autocomplete="off"
-        spellcheck="false"
-    >
+    <input type="text" id="passwordInput" class="password-input" placeholder="Inserire codice di accesso" autocomplete="off" spellcheck="false">
 
     <button class="access-btn" onclick="checkPassword()">ACCEDI</button>
 
@@ -168,42 +98,36 @@ body {
         <p>Proprietario – Capo famiglia</p>
         <p>Fondatore e gestore della pizzeria. Persona appassionata e metodica, legata alla tradizione e alla qualità. Padre di Francesco e Ugo, nonno di Michael.</p>
     </div>
-
     <div class="character-card">
         <h3>2. UGO CANEPA</h3>
         <p>Nato a Genova il 12-06-1984</p>
         <p>Pizzaiolo – Figlio maggiore</p>
         <p>Responsabile del forno e dell’organizzazione quotidiana. Paziente, affettuoso e leale verso la famiglia.</p>
     </div>
-
     <div class="character-card">
         <h3>3. FRANCESCO CANEPA</h3>
         <p>Nato a Genova il 02-02-1988</p>
         <p>Pizzaiolo – Figlio minore</p>
         <p>Carismatico e ambizioso. Alterna il lavoro in pizzeria a una vita mondana. Vittima dell’indagine.</p>
     </div>
-
     <div class="character-card">
         <h3>4. GIULIA STASILIANI</h3>
         <p>Nata a Chiavari il 20-05-1986</p>
         <p>Sala – Amministrazione</p>
         <p>Moglie di Ugo. Gestisce clienti, cassa e documenti. Affettuosa e pragmatica.</p>
     </div>
-
     <div class="character-card">
         <h3>5. SAIF MEZIANE</h3>
         <p>Nato ad Algeri il 27-12-2002</p>
         <p>Portapizze – Tuttofare</p>
         <p>Addetto alle consegne e supporto interno. Giovane, energico e osservatore attento.</p>
     </div>
-
     <div class="character-card">
         <h3>6. MICHAEL CANEPA</h3>
         <p>Nato a Genova il 01-09-2010</p>
         <p>Aiuto saltuario</p>
         <p>Figlio adolescente, pasticcione ma curioso, sempre protetto in pizzeria.</p>
     </div>
-
     <div class="character-card">
         <h3>7. PIERO</h3>
         <p>Nato a Lodi il 31-03-1973</p>
@@ -247,7 +171,7 @@ function checkPassword() {
     };
 
     if (suspectPasswords[password]) {
-        localStorage.setItem("federal_access", "granted");
+        localStorage.setItem("federal_access", "granted"); // ✅ salva su localStorage
         window.location.href = suspectPasswords[password];
         return;
     }
