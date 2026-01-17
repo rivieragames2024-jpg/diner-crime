@@ -1,73 +1,28 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GIORGIO</title>
-<style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { background-color: #0a1929; color: #c0d8ff; font-family: 'Courier New', monospace; padding: 20px; min-height: 100vh; }
-.container { max-width: 600px; margin: 0 auto; }
-.header { text-align: center; padding: 40px 0; border-bottom: 2px solid #4dabff; margin-bottom: 40px; }
-.header h1 { color: #4dabff; font-size: 32px; letter-spacing: 2px; }
-.dichiarazione {
-    background-color: #112240;
-    border: 2px solid #1e3a5f;
-    border-radius: 5px;
-    padding: 40px;
-    text-align: left;
-    min-height: 300px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    color: #8ab4f8;
-    font-size: 18px;
-    font-style: italic;
-    line-height: 1.6;
-}
-.back-btn { background-color: #1e3a5f; color: #64b5ff; border: 1px solid #4dabff; padding: 15px 30px; font-family: 'Courier New', monospace; font-size: 16px; cursor: pointer; border-radius: 3px; width: 100%; margin-top: 30px; }
-.back-btn:hover { background-color: #2a4a7a; }
-.footer { text-align: center; color: #5a7eb0; font-size: 12px; margin-top: 40px; padding-top: 20px; border-top: 1px solid #1e3a5f; }
-</style>
-</head>
-<body>
+<div class="dichiarazione">
+    <p><strong>Intervistatore:</strong> Signor Canepa, può dirmi il suo nome completo e la sua età, per favore?</p>
+    <p><strong>Giorgio Canepa:</strong> Giorgio Canepa, 60 anni.</p>
 
-<!-- Controllo sicurezza -->
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    console.log("Chiave federal_access:", localStorage.getItem("federal_access"));
-    if (localStorage.getItem("federal_access") !== "granted") {
-        console.log("Redirect a area-comune.html");
-        window.location.href = "area-comune.html";
-    }
-});
-</script>
+    <p><strong>Intervistatore:</strong> Lei è il proprietario della pizzeria “Da U Canepa”, corretto?</p>
+    <p><strong>Giorgio Canepa:</strong> Sì, io sono il proprietario e gestore.</p>
 
-<div class="container">
-    <div class="header">
-        <h1>GIORGIO</h1>
-    </div>
-    
-    <div class="dichiarazione">
-        <p><strong>Giorgio Canepa</strong> racconta ai detective che ha visto <strong>Saif</strong> uscire dal magazzino poco dopo che <strong>Francesco</strong> è stato trovato senza vita.</p>
-    </div>
-    
-    <button class="back-btn" onclick="goBack()">← TORNA ALL'AREA COMUNE</button>
-    
-    <div class="footer">
-        Federal Database • Accesso Riservato
-    </div>
+    <p><strong>Intervistatore:</strong> È certo di poter ricostruire con precisione dove si trovava e cosa stava facendo nella fascia oraria compresa tra le 18.00 e le 19.00, momento in cui è stato rinvenuto il corpo di suo figlio Francesco?</p>
+    <p><strong>Giorgio Canepa:</strong> Ero impegnato a rispondere al telefono, stavo prendendo le prenotazioni per questa sera. Sono passato anche nel magazzino posteriore per sistemare alcune scorte. Francesco invece era spesso vicino alle scale del magazzino; mi è sembrato che stesse parlando animatamente con qualcuno, forse uno dei ragazzi o Saif, ma non sono sicuro.</p>
+
+    <p><strong>Intervistatore:</strong> Chi era presente all’interno della pizzeria in quella stessa fascia oraria?</p>
+    <p><strong>Giorgio Canepa:</strong> C’erano Ugo, Saif che andava e veniva per le consegne, Michael in sala. Nel pomeriggio era passato anche Piero, il fornitore. Non eravamo mai completamente soli.</p>
+
+    <p><strong>Intervistatore:</strong> Quando ha visto suo figlio Francesco per l’ultima volta e in quali circostanze?</p>
+    <p><strong>Giorgio Canepa:</strong> Poco prima delle sei e mezza. Francesco era nervoso e si muoveva tra il magazzino e il retro del bancone. Mi ha detto che doveva controllare alcune cose legate al lavoro e che ne avremmo parlato più tardi.</p>
+
+    <p><strong>Intervistatore:</strong> Nel corso della giornata ha rilevato comportamenti, eventi o situazioni che ha giudicato insoliti o fuori dall’ordinario?</p>
+    <p><strong>Giorgio Canepa:</strong> No, tutto sembrava normale, come ogni giorno. Solo un po’ di stanchezza, ma niente di preoccupante.</p>
+
+    <p><strong>Intervistatore:</strong> Risulta che qualcuno sia entrato o uscito dal locale in orari o con modalità non abituali?</p>
+    <p><strong>Giorgio Canepa:</strong> Alcune persone sono passate dal retro, soprattutto quando arrivavano le consegne o per parlare senza essere visti dai clienti. Io non controllo sempre chi entra e chi esce in quell’area.</p>
+
+    <p><strong>Intervistatore:</strong> Negli ultimi tempi erano emerse tensioni o conflitti tra Francesco e altre persone, all’interno o all’esterno dell’attività?</p>
+    <p><strong>Giorgio Canepa:</strong> Ho dei sospetti che qualcuno mi stesse fregando con le fatture e i conti, qualcosa non tornava, ma non so chi.</p>
+
+    <p><strong>Intervistatore:</strong> C’è un motivo per cui dovremmo ritenere che lei ci abbia riferito tutti i fatti senza omettere nulla?</p>
+    <p><strong>Giorgio Canepa:</strong> Ho perso un figlio. Non ho alcun interesse a nascondere la verità. Voglio solo che si capisca cosa è successo davvero e se qualcuno ha approfittato della nostra fiducia. La mia priorità è far emergere la verità per proteggere la famiglia e la pizzeria.</p>
 </div>
-
-<script>
-function goBack() {
-    if (document.referrer) {
-        window.history.back();
-    } else {
-        window.location.href = 'area-comune.html';
-    }
-}
-</script>
-
-</body>
-</html>
