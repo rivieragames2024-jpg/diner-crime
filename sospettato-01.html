@@ -65,8 +65,10 @@
 </head>
 <body>
 <script>
-  if (localStorage.getItem("federal_access") !== "granted") {
-    window.location.href = "index.html";
+  window.onload = function() {
+    if (localStorage.getItem("federal_access") !== "granted") {
+      window.location.href = "index.html";
+    }
   }
 </script>
 <div class="container">
@@ -99,4 +101,5 @@ function goBack() {
 
 </body>
 </html>
+
 
