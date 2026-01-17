@@ -1,166 +1,216 @@
+
 <!DOCTYPE html>
 <html lang="it">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Federal Database - Accesso Generale</title>
-
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-body {
-    background-color: #0a1929;
-    color: #c0d8ff;
-    font-family: 'Courier New', monospace;
-    padding: 20px;
-    line-height: 1.6;
-}
+    body {
+        background-color: #0a1929;
+        color: #c0d8ff;
+        font-family: 'Courier New', monospace;
+        padding: 20px;
+        line-height: 1.6;
+    }
 
-.container {
-    max-width: 900px;
-    margin: 0 auto;
-}
+    .container {
+        max-width: 900px;
+        margin: 0 auto;
+    }
 
-.header {
-    text-align: center;
-    padding: 20px 0;
-    border-bottom: 1px solid #1e3a5f;
-    margin-bottom: 30px;
-}
+    .header {
+        text-align: center;
+        padding: 20px 0;
+        border-bottom: 1px solid #1e3a5f;
+        margin-bottom: 30px;
+    }
 
-.header h1 {
-    color: #4dabff;
-    font-size: 24px;
-    margin-bottom: 5px;
-    letter-spacing: 1px;
-}
+    .header h1 {
+        color: #4dabff;
+        font-size: 24px;
+        margin-bottom: 5px;
+        letter-spacing: 1px;
+    }
 
-.header p {
-    color: #8ab4f8;
-    font-size: 14px;
-}
+    .header p {
+        color: #8ab4f8;
+        font-size: 14px;
+    }
 
-.access-box {
-    background-color: #112240;
-    border: 1px solid #1e3a5f;
-    border-radius: 5px;
-    padding: 25px;
-    margin-bottom: 30px;
-    text-align: center;
-}
+    .access-box {
+        background-color: #112240;
+        border: 1px solid #1e3a5f;
+        border-radius: 5px;
+        padding: 25px;
+        margin-bottom: 30px;
+        text-align: center;
+    }
 
-.access-box h2 {
-    color: #64b5ff;
-    margin-bottom: 20px;
-    font-size: 18px;
-}
+    .access-box h2 {
+        color: #64b5ff;
+        margin-bottom: 20px;
+        font-size: 18px;
+    }
 
-.password-input {
-    width: 100%;
-    padding: 12px 15px;
-    background-color: #0a1929;
-    border: 1px solid #1e3a5f;
-    color: #c0d8ff;
-    font-family: 'Courier New', monospace;
-    font-size: 16px;
-    border-radius: 3px;
-    margin-bottom: 15px;
-    -webkit-text-security: disc;
-}
+    .password-input {
+        width: 100%;
+        padding: 12px 15px;
+        background-color: #0a1929;
+        border: 1px solid #1e3a5f;
+        color: #c0d8ff;
+        font-family: 'Courier New', monospace;
+        font-size: 16px;
+        border-radius: 3px;
+        margin-bottom: 15px;
+        -webkit-text-security: disc;
+    }
 
-.access-btn {
-    background-color: #1e3a5f;
-    color: #64b5ff;
-    border: 1px solid #4dabff;
-    padding: 12px 30px;
-    font-family: 'Courier New', monospace;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 3px;
-    width: 100%;
-    margin-bottom: 20px;
-}
+    .access-btn {
+        background-color: #1e3a5f;
+        color: #64b5ff;
+        border: 1px solid #4dabff;
+        padding: 12px 30px;
+        font-family: 'Courier New', monospace;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 3px;
+        width: 100%;
+        margin-bottom: 20px;
+    }
 
-.access-btn:hover {
-    background-color: #2a4a7a;
-}
+    .access-btn:hover {
+        background-color: #2a4a7a;
+    }
 
-.password-hint {
-    color: #5a7eb0;
-    font-size: 11px;
-    text-align: center;
-    margin-bottom: 20px;
-    font-style: italic;
-}
+    .password-hint {
+        color: #5a7eb0;
+        font-size: 11px;
+        text-align: center;
+        margin-bottom: 20px;
+        font-style: italic;
+    }
 
-.error {
-    color: #ff6b6b;
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 14px;
-    display: none;
-}
+    .error {
+        color: #ff6b6b;
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 14px;
+        display: none;
+    }
 
-/* Personaggi */
-.characters-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
-    margin-bottom: 40px;
-}
+    /* Caselle personaggi */
+    .characters-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 15px;
+        margin-bottom: 40px;
+    }
 
-.character-card {
-    background-color: #112240;
-    border: 1px solid #1e3a5f;
-    border-radius: 5px;
-    padding: 15px;
-    font-size: 14px;
-}
+    .character-card {
+        background-color: #112240;
+        border: 1px solid #1e3a5f;
+        border-radius: 5px;
+        padding: 15px;
+        color: #c0d8ff;
+        font-size: 14px;
+        line-height: 1.4;
+    }
 
-.character-card h3 {
-    color: #64b5ff;
-    margin-bottom: 5px;
-}
+    .character-card h3 {
+        color: #64b5ff;
+        margin-bottom: 5px;
+        font-size: 16px;
+    }
 
-.footer {
-    text-align: center;
-    color: #5a7eb0;
-    font-size: 12px;
-    padding-top: 20px;
-    border-top: 1px solid #1e3a5f;
-}
+    .character-card p {
+        margin-bottom: 5px;
+    }
+
+    .footer {
+        text-align: center;
+        color: #5a7eb0;
+        font-size: 12px;
+        padding-top: 20px;
+        border-top: 1px solid #1e3a5f;
+    }
 </style>
 </head>
-
 <body>
 <div class="container">
 
-<div class="header">
-    <h1>FEDERAL DATABASE ACCESS</h1>
-    <p>Clearance Level: STANDARD</p>
-</div>
+    <div class="header">
+        <h1>FEDERAL DATABASE ACCESS</h1>
+        <p>Clearance Level: STANDARD</p>
+    </div>
 
-<div class="access-box">
-    <h2>ACCESSO AREE RISERVATE</h2>
+    <div class="access-box">
+        <h2>ACCESSO AREE RISERVATE</h2>
+        <input
+            type="text"
+            id="passwordInput"
+            class="password-input"
+            placeholder="Inserire codice di accesso"
+            autocomplete="off"
+            autocorrect="off"
+            autocapitalize="off"
+            spellcheck="false"
+        >
+        <button class="access-btn" onclick="checkPassword()">ACCEDI</button>
+        <div class="password-hint">I codici ignorano maiuscole e simboli</div>
+        <div id="errorMsg" class="error">Accesso negato</div>
+    </div>
 
-    <input
-        type="text"
-        id="passwordInput"
-        class="password-input"
-        placeholder="Inserire codice di accesso"
-        autocomplete="off"
-        spellcheck="false"
-    >
+    <div class="characters-grid">
+        <div class="character-card">
+            <h3>Giorgio Canepa</h3>
+            <p>1966 – 60 anni</p>
+            <p>Proprietario – Capo famiglia</p>
+            <p>Fondatore e gestore della pizzeria. Racconta ai detective di aver visto Saif uscire dal magazzino poco dopo che Francesco è stato trovato senza vita.</p>
+        </div>
+        <div class="character-card">
+            <h3>Ugo Canepa</h3>
+            <p>1984 – 41 anni</p>
+            <p>Pizzaiolo – Figlio maggiore</p>
+            <p>Responsabile del forno e dell’organizzazione quotidiana. Paziente e leale, ama la famiglia e il lavoro in pizzeria.</p>
+        </div>
+        <div class="character-card">
+            <h3>Francesco Canepa</h3>
+            <p>1988 – 37 anni</p>
+            <p>Pizzaiolo – Figlio minore</p>
+            <p>Carismatico e ambizioso, alterna lavoro e vita mondana. Vittima dell’indagine.</p>
+        </div>
+        <div class="character-card">
+            <h3>Giulia Stasiliani</h3>
+            <p>1986 – 39 anni</p>
+            <p>Sala – Amministrazione</p>
+            <p>Moglie di Ugo. Affettuosa e pragmatica, gestisce clienti, cassa e documenti amministrativi.</p>
+        </div>
+        <div class="character-card">
+            <h3>Saif</h3>
+            <p>2002 – 24 anni</p>
+            <p>Portapizze – Tuttofare</p>
+            <p>Addetto alle consegne e supporto interno. Giovane, energico, osservatore attento.</p>
+        </div>
+        <div class="character-card">
+            <h3>Michael Canepa</h3>
+            <p>2010 – 16 anni</p>
+            <p>Aiuto saltuario</p>
+            <p>Figlio adolescente, pasticcione ma curioso, sempre protetto in pizzeria.</p>
+        </div>
+        <div class="character-card">
+            <h3>Piero</h3>
+            <p>1973 – 52 anni</p>
+            <p>Fornitore esterno</p>
+            <p>Fornitore storico di farine e bevande. Apparentemente bonario, ma spesso calcolatore.</p>
+        </div>
+    </div>
 
-    <button class="access-btn" onclick="checkPassword()">ACCEDI</button>
-
-    <div class="password-hint">I codici ignorano maiuscole e simboli</div>
-    <div id="errorMsg" class="error">Accesso negato</div>
-</div>
-
-<div class="footer">
-    Federal Intelligence System • Database v3.4 • Accesso Registrato
-</div>
+    <div class="footer">
+        Federal Intelligence System • Database v3.4 • Accesso Registrato
+    </div>
 
 </div>
 
@@ -170,9 +220,9 @@ function normalizePassword(text) {
 }
 
 function checkPassword() {
-    const input = document.getElementById('passwordInput');
-    const error = document.getElementById('errorMsg');
-    const password = normalizePassword(input.value);
+    const inputField = document.getElementById('passwordInput');
+    const password = normalizePassword(inputField.value);
+    const errorMsg = document.getElementById('errorMsg');
 
     const suspectPasswords = {
         'ombraverde': 'sospettato-01.html',
@@ -193,27 +243,27 @@ function checkPassword() {
     };
 
     if (suspectPasswords[password]) {
-        sessionStorage.setItem("federal_access", "granted");
         window.location.href = suspectPasswords[password];
         return;
     }
 
     if (casePasswords[password]) {
-        sessionStorage.setItem("federal_access", "granted");
         window.location.href = casePasswords[password];
         return;
     }
 
-    error.style.display = 'block';
-    input.value = '';
+    errorMsg.style.display = 'block';
+    inputField.value = '';
 
     setTimeout(() => {
-        error.style.display = 'none';
+        errorMsg.style.display = 'none';
     }, 3000);
 }
 
-document.getElementById('passwordInput').addEventListener('keypress', e => {
-    if (e.key === 'Enter') checkPassword();
+document.getElementById('passwordInput').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        checkPassword();
+    }
 });
 </script>
 
