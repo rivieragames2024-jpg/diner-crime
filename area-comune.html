@@ -151,25 +151,24 @@ function checkPassword() {
     const input = document.getElementById('passwordInput');
     const error = document.getElementById('errorMsg');
     const password = normalizePassword(input.value);
-
+    
     const suspectPasswords = {
-        'ombraverde': 'sospettato-01.html',
-        'silenziofreddo': 'sospettato-02.html',
-        'sanguebianco': 'sospettato-03.html',
-        'riflessodimezzanotte': 'sospettato-04.html',
-        'passotroppolento': 'sospettato-05.html',
-        'echodisepolcro': 'sospettato-06.html',
-        'vertiginedelvuoto': 'sospettato-07.html'
-    };
+    'ombraverde': 'sx9f3k_gcan_77.html',
+    'silenziofreddo': 'm2qd8u_ucan_19.html',
+    'sanguebianco': 'p8xq91_fcan_z.html',
+    'riflessodimezzanotte': 'w0a7m4_gsta.html',
+    'passotroppolento': 'n5r2sa_smez.html',
+    'echodisepolcro': 'x7m9q_mc16.html',
+    'vertiginedelvuoto': 'd3k8p_pr73.html'
+};
 
-    const casePasswords = {
-        'cifrarossa': 'caso-01.html',
-        'veritasepolta': 'caso-02.html',
-        'labirintodispecchi': 'caso-03.html',
-        'ultimosospiro': 'caso-04.html',
-        'memoriacancellata': 'caso-05.html'
-    };
-
+const casePasswords = {
+    'cifrarossa': 'k9z1p_caso_r.html',
+    'veritasepolta': 'q8m2x_caso_v.html',
+    'labirintodispecchi': 'a7p4n_caso_l.html',
+    'ultimosospiro': 'm3x9s_caso_u.html',
+    'memoriacancellata': 'z8r1k_caso_m.html'
+};
     if (suspectPasswords[password]) {
         localStorage.setItem("federal_access", "granted"); // ✅ salva su localStorage
         window.location.href = suspectPasswords[password];
@@ -197,3 +196,4 @@ document.getElementById('passwordInput').addEventListener('keypress', e => {
 
 </body>
 </html>
+
