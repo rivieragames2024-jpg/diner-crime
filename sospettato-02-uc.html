@@ -1,115 +1,142 @@
+
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>deposizione ugo canepa</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            background-color: #0a1929;
-            color: #c0d8ff;
-            font-family: 'Courier New', monospace;
-            padding: 20px;
-            min-height: 100vh;
-        }
-        .container { max-width: 600px; margin: 0 auto; }
-        .header {
-            text-align: center;
-            padding: 40px 0;
-            border-bottom: 2px solid #4dabff;
-            margin-bottom: 40px;
-        }
-        .header h1 {
-            color: #4dabff;
-            font-size: 32px;
-            letter-spacing: 2px;
-        }
-        .dichiarazione {
-            background-color: #112240;
-            border: 2px solid #1e3a5f;
-            border-radius: 5px;
-            padding: 40px;
-            text-align: left;
-            min-height: 300px;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            color: #8ab4f8;
-            font-size: 18px;
-            font-style: italic;
-            line-height: 1.6;
-        }
-        .dichiarazione strong {
-            color: #c0d8ff;
-        }
-        .back-btn {
-            background-color: #1e3a5f;
-            color: #64b5ff;
-            border: 1px solid #4dabff;
-            padding: 15px 30px;
-            font-family: 'Courier New', monospace;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 3px;
-            width: 100%;
-            margin-top: 30px;
-        }
-        .back-btn:hover { background-color: #2a4a7a; }
-        .footer {
-            text-align: center;
-            color: #5a7eb0;
-            font-size: 12px;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #1e3a5f;
-        }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Interrogatorio Ugo Canepa</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background-color: #0a1929;
+  color: #c0d8ff;
+  font-family: 'Courier New', monospace;
+  padding: 20px;
+  min-height: 100vh;
+}
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.header {
+  text-align: center;
+  padding: 40px 0;
+  border-bottom: 2px solid #4dabff;
+  margin-bottom: 40px;
+}
+.header h1 {
+  color: #4dabff;
+  font-size: 32px;
+  letter-spacing: 2px;
+}
+.dichiarazione {
+  background-color: #112240;
+  border: 2px solid #1e3a5f;
+  border-radius: 5px;
+  padding: 40px;
+  text-align: left;
+  min-height: 300px;
+  color: #8ab4f8;
+  font-size: 18px;
+  font-style: italic;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.dichiarazione p {
+  margin-bottom: 10px;
+}
+.dichiarazione strong {
+  font-weight: bold;
+  color: #c0d8ff;
+}
+.back-btn {
+  background-color: #1e3a5f;
+  color: #64b5ff;
+  border: 1px solid #4dabff;
+  padding: 15px 30px;
+  font-family: 'Courier New', monospace;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 3px;
+  width: 100%;
+  margin-top: 30px;
+}
+.back-btn:hover {
+  background-color: #2a4a7a;
+}
+.footer {
+  text-align: center;
+  color: #5a7eb0;
+  font-size: 12px;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #1e3a5f;
+}
+</style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>deposizione ugo canepa</h1>
-        </div>
-        
-        <div class="dichiarazione">
-            <p><strong>Detective:</strong> «Signor Canepa, può indicare il suo nome completo e la sua età, per favore?»</p>
-            <p><strong>Ugo Canepa:</strong> Ugo Canepa, 41 anni.</p>
 
-            <p><strong>Detective:</strong> «Lei lavora insieme a suo padre Giorgio nella pizzeria “Da U Canepa”, corretto?»</p>
-            <p><strong>Ugo Canepa:</strong> Sì, lavoro con mio padre da molti anni, il mio compito è di sfornare le pizze più buone dell’entroterra genovese.</p>
+<!-- Controllo sicurezza -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  if (localStorage.getItem("federal_access") !== "granted") {
+    window.location.href = "area-comune.html";
+  }
+});
+</script>
 
-            <p><strong>Detective:</strong> «È certo di poter ricostruire con precisione dove si trovava e cosa stava facendo nella fascia oraria compresa tra le 18.00 e le 19.00, momento in cui è stato rinvenuto il corpo di suo fratello Francesco?»</p>
-            <p><strong>Ugo Canepa:</strong> Ero a preparare impasti e la linea per la serata. Passavo ogni tanto tra banco e forno per verificare che tutto fosse in ordine. Ho visto Francesco armeggiare dietro il bancone con alcune fatture e documenti… sembrava concentrato su cose che non mi aveva mai mostrato prima.</p>
+<div class="container">
+  <div class="header">
+    <h1>Interrogatorio Ugo Canepa</h1>
+  </div>
 
-            <p><strong>Detective:</strong> «Chi era presente all’interno della pizzeria in quella stessa fascia oraria?»</p>
-            <p><strong>Ugo Canepa:</strong> Io, mio padre Giorgio al banco, mia moglie, Saif in sala, Michael che gironzolava come sempre e Piero, il fornitore, era passato nel pomeriggio.</p>
+  <div class="dichiarazione">
+    <p><strong>Detective:</strong> «Signor Canepa, può indicare il suo nome completo e la sua età, per favore?»</p>
+    <p><strong>Ugo Canepa:</strong> Ugo Canepa, 41 anni.</p>
 
-            <p><strong>Detective:</strong> «Quando ha visto suo fratello Francesco per l’ultima volta e in quali circostanze?»</p>
-            <p><strong>Ugo Canepa:</strong> Poco prima delle sei e mezza. Era nervoso, mi ha risposto male quando gli ho chiesto cosa stesse facendo. Non era da lui.</p>
+    <p><strong>Detective:</strong> «Lei lavora insieme a suo padre Giorgio nella pizzeria “Da U Canepa”, corretto?»</p>
+    <p><strong>Ugo Canepa:</strong> Sì, lavoro con mio padre da molti anni, il mio compito è di sfornare le pizze più buone dell’entroterra genovese.</p>
 
-            <p><strong>Detective:</strong> «Nel corso della giornata ha rilevato comportamenti, eventi o situazioni che ha giudicato insoliti o fuori dall’ordinario?»</p>
-            <p><strong>Ugo Canepa:</strong> Sì. Francesco era strano, sulle sue. Lui di solito è molto spensierato, prende tutto alla leggera. Quel giorno invece armeggiava con documenti e conti come se volesse tenere tutto nascosto. Ho avuto la sensazione che stesse facendo qualcosa che non voleva che nessuno vedesse. Non so cosa fosse, ma qualcosa non quadrava.</p>
+    <p><strong>Detective:</strong> «È certo di poter ricostruire con precisione dove si trovava e cosa stava facendo nella fascia oraria compresa tra le 18.00 e le 19.00, momento in cui è stato rinvenuto il corpo di suo fratello Francesco?»</p>
+    <p><strong>Ugo Canepa:</strong> Ero a preparare impasti e la linea per la serata. Passavo ogni tanto tra banco e forno per verificare che tutto fosse in ordine. Ho visto Francesco armeggiare dietro il bancone con alcune fatture e documenti… sembrava concentrato su cose che non mi aveva mai mostrato prima.</p>
 
-            <p><strong>Detective:</strong> «Risulta che qualcuno sia entrato o uscito dal locale in orari o con modalità non abituali?»</p>
-            <p><strong>Ugo Canepa:</strong> Piero il fornitore, ma niente di sospetto. Francesco però sembrava muoversi in modo strano, come se volesse evitare che qualcuno notasse cosa stava facendo.</p>
+    <p><strong>Detective:</strong> «Chi era presente all’interno della pizzeria in quella stessa fascia oraria?»</p>
+    <p><strong>Ugo Canepa:</strong> Io, mio padre Giorgio al banco, mia moglie, Saif in sala, Michael che gironzolava come sempre e Piero, il fornitore, era passato nel pomeriggio.</p>
 
-            <p><strong>Detective:</strong> «Negli ultimi tempi erano emerse tensioni o conflitti tra Francesco, lei o altre persone, all’interno o all’esterno della pizzeria?»</p>
-            <p><strong>Ugo Canepa:</strong> Con me non ci sono mai stati conflitti diretti. Ma ultimamente ho avuto il sospetto che Francesco stesse manomettendo le fatture o modificando i conti della pizzeria per interessi personali. Non ne ho parlato con nessuno perché non avevo prove certe… e c’era un’altra cosa… qualcosa di personale che non ho mai detto a nessuno. Michael, mio figlio… beh, alcune cose su di lui non sono come sembrano. Ma non voglio entrare nei dettagli, è complicato.</p>
+    <p><strong>Detective:</strong> «Quando ha visto suo fratello Francesco per l’ultima volta e in quali circostanze?»</p>
+    <p><strong>Ugo Canepa:</strong> Poco prima delle sei e mezza. Era nervoso, mi ha risposto male quando gli ho chiesto cosa stesse facendo. Non era da lui.</p>
 
-            <p><strong>Detective:</strong> «C’è un motivo per cui dovremmo ritenere che lei ci abbia riferito tutti i fatti senza omettere nulla?»</p>
-            <p><strong>Ugo Canepa:</strong> Sto dicendo tutto ciò che ho visto e sospettato. Non posso dire di più perché non ho prove concrete… ma alcune cose non mi tornavano, e mi tormentava l’idea che qualcuno della famiglia potesse approfittare della pizzeria.</p>
-        </div>
-        
-        <button class="back-btn" onclick="window.location.href='../area-comune.html'">
-            ← TORNA ALL'AREA COMUNE
-        </button>
-        
-        <div class="footer">
-            Federal Database • Accesso Riservato
-        </div>
-    </div>
+    <p><strong>Detective:</strong> «Nel corso della giornata ha rilevato comportamenti, eventi o situazioni che ha giudicato insoliti o fuori dall’ordinario?»</p>
+    <p><strong>Ugo Canepa:</strong> Sì. Francesco era strano, sulle sue e lui di solito è molto spensierato, prende tutto alla leggera, però armeggiava con documenti e conti come se volesse tenere tutto nascosto. Ho avuto la sensazione che stesse facendo qualcosa che non voleva che nessuno vedesse. Non so cosa fosse, ma qualcosa non quadrava.</p>
+
+    <p><strong>Detective:</strong> «Risulta che qualcuno sia entrato o uscito dal locale in orari o con modalità non abituali?»</p>
+    <p><strong>Ugo Canepa:</strong> Piero il fornitore, ma niente di sospetto. Francesco, però, sembrava muoversi in modo strano, come se volesse evitare che qualcuno notasse cosa stava facendo.</p>
+
+    <p><strong>Detective:</strong> «Negli ultimi tempi erano emerse tensioni o conflitti tra Francesco, lei o altre persone, all’interno o all’esterno della pizzeria?»</p>
+    <p><strong>Ugo Canepa:</strong> Con me non ci sono mai stati conflitti diretti. Ma ultimamente ho avuto il sospetto che Francesco stesse manomettendo le fatture o modificando i conti della pizzeria per interessi personali. Non ne ho parlato con nessuno perché non avevo prove certe… e c’era un’altra cosa… qualcosa di personale che non ho mai detto a nessuno. Michael, mio figlio… beh, alcune cose su di lui non sono come sembrano. Ma non voglio entrare nei dettagli, è complicato.</p>
+
+    <p><strong>Detective:</strong> «C’è un motivo per cui dovremmo ritenere che lei ci abbia riferito tutti i fatti senza omettere nulla?»</p>
+    <p><strong>Ugo Canepa:</strong> Sto dicendo tutto ciò che ho visto e sospettato. Non posso dire di più perché non ho prove concrete… ma alcune cose non mi tornavano, e mi tormentava l’idea che qualcuno della famiglia potesse approfittare della pizzeria.</p>
+  </div>
+
+  <button class="back-btn" onclick="goBack()">← TORNA ALL'AREA COMUNE</button>
+
+  <div class="footer">
+    Federal Database • Accesso Riservato
+  </div>
+</div>
+
+<script>
+function goBack() {
+  if (document.referrer) {
+    window.history.back();
+  } else {
+    window.location.href = 'area-comune.html';
+  }
+}
+</script>
+
 </body>
 </html>
-
-
