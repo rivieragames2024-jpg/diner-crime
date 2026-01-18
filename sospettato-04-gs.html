@@ -1,84 +1,138 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GIULIA</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            background-color: #0a1929;
-            color: #c0d8ff;
-            font-family: 'Courier New', monospace;
-            padding: 20px;
-            min-height: 100vh;
-        }
-        .container { max-width: 600px; margin: 0 auto; }
-        .header {
-            text-align: center;
-            padding: 40px 0;
-            border-bottom: 2px solid #4dabff;
-            margin-bottom: 40px;
-        }
-        .header h1 {
-            color: #4dabff;
-            font-size: 32px;
-            letter-spacing: 2px;
-        }
-        .dichiarazione {
-            background-color: #112240;
-            border: 2px solid #1e3a5f;
-            border-radius: 5px;
-            padding: 40px;
-            text-align: center;
-            min-height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #8ab4f8;
-            font-size: 18px;
-            font-style: italic;
-        }
-        .back-btn {
-            background-color: #1e3a5f;
-            color: #64b5ff;
-            border: 1px solid #4dabff;
-            padding: 15px 30px;
-            font-family: 'Courier New', monospace;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 3px;
-            width: 100%;
-            margin-top: 30px;
-        }
-        .back-btn:hover { background-color: #2a4a7a; }
-        .footer {
-            text-align: center;
-            color: #5a7eb0;
-            font-size: 12px;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #1e3a5f;
-        }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Interrogatorio Giulia Stasiliani</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background-color: #0a1929;
+  color: #c0d8ff;
+  font-family: 'Courier New', monospace;
+  padding: 20px;
+  min-height: 100vh;
+}
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.header {
+  text-align: center;
+  padding: 40px 0;
+  border-bottom: 2px solid #4dabff;
+  margin-bottom: 40px;
+}
+.header h1 {
+  color: #4dabff;
+  font-size: 32px;
+  letter-spacing: 2px;
+}
+.dichiarazione {
+  background-color: #112240;
+  border: 2px solid #1e3a5f;
+  border-radius: 5px;
+  padding: 40px;
+  text-align: left;
+  min-height: 300px;
+  color: #8ab4f8;
+  font-size: 18px;
+  font-style: italic;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.dichiarazione p {
+  margin-bottom: 10px;
+}
+.dichiarazione strong {
+  font-weight: bold;
+  color: #c0d8ff;
+}
+.back-btn {
+  background-color: #1e3a5f;
+  color: #64b5ff;
+  border: 1px solid #4dabff;
+  padding: 15px 30px;
+  font-family: 'Courier New', monospace;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 3px;
+  width: 100%;
+  margin-top: 30px;
+}
+.back-btn:hover {
+  background-color: #2a4a7a;
+}
+.footer {
+  text-align: center;
+  color: #5a7eb0;
+  font-size: 12px;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #1e3a5f;
+}
+</style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>GIULIA</h1>
-        </div>
-        
-        <div class="dichiarazione">
-            [DICHIARAZIONE DOPO LA MORTE DI FRANCESCO]
-        </div>
-        
-        <button class="back-btn" onclick="window.location.href='../area-comune.html'">
-            ← TORNA ALL'AREA COMUNE
-        </button>
-        
-        <div class="footer">
-            Federal Database • Accesso Riservato
-        </div>
-    </div>
+
+<!-- Controllo sicurezza -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  if (localStorage.getItem("federal_access") !== "granted") {
+    window.location.href = "area-comune.html";
+  }
+});
+</script>
+
+<div class="container">
+  <div class="header">
+    <h1>Interrogatorio Giulia Stasiliani</h1>
+  </div>
+
+  <div class="dichiarazione">
+    <p><strong>Detective:</strong> «Signora Stasiliani, può indicare il suo nome completo e la sua età, per favore?»</p>
+    <p><strong>Giulia Stasiliani:</strong> Giulia Stasiliani, 39 anni.</p>
+
+    <p><strong>Detective:</strong> «Lei lavora nella pizzeria “Da U Canepa”, principalmente nella gestione della sala e in compiti amministrativi, corretto?»</p>
+    <p><strong>Giulia Stasiliani:</strong> Sì, mi occupo dei clienti e di alcune pratiche interne.</p>
+
+    <p><strong>Detective:</strong> «È certa di poter ricostruire con precisione dove si trovava e cosa stava facendo nella fascia oraria compresa tra le 18.00 e le 19.00, momento in cui è stato rinvenuto il corpo di Francesco?»</p>
+    <p><strong>Giulia Stasiliani:</strong> Ero in sala, poi nel retro a controllare alcune fatture. Francesco mi aveva chiesto di dare un’occhiata a dei documenti.</p>
+
+    <p><strong>Detective:</strong> «Chi era presente all’interno della pizzeria in quella stessa fascia oraria?»</p>
+    <p><strong>Giulia Stasiliani:</strong> Tutti: Giorgio al banco, Ugo al forno, Saif in sala e Michael che girava.</p>
+
+    <p><strong>Detective:</strong> «Ha notato comportamenti, conversazioni o situazioni che le sono sembrati insoliti o sospetti nel corso della giornata?»</p>
+    <p><strong>Giulia Stasiliani:</strong> Francesco era molto agitato. Continuava a chiedermi se suo padre avesse scoperto qualcosa. Sembrava avere paura di una reazione.</p>
+
+    <p><strong>Detective:</strong> «Ha visto qualcuno entrare o uscire dal locale in orari o con modalità non abituali?»</p>
+    <p><strong>Giulia Stasiliani:</strong> Piero è passato, sì. Ma è un fornitore, capita.</p>
+
+    <p><strong>Detective:</strong> «È a conoscenza di informazioni o documenti riguardanti la pizzeria o la famiglia che potrebbero essere rilevanti per quanto accaduto?»</p>
+    <p><strong>Giulia Stasiliani:</strong> So che esistevano dei documenti che, se fossero venuti fuori, avrebbero creato una grossa frattura in famiglia.</p>
+
+    <p><strong>Detective:</strong> «Si sente sicura di riferire tutto ciò che sa senza omettere dettagli importanti?»</p>
+    <p><strong>Giulia Stasiliani:</strong> Sto dicendo tutto ciò che riguarda il lavoro e quello che ho visto quel giorno. Per quanto riguarda la famiglia… ci sono cose che conosco, cose delicate, ma non tutte devono essere messe in piazza ora. Alcune verità, se venissero fuori adesso, potrebbero cambiare tutto.</p>
+  </div>
+
+  <button class="back-btn" onclick="goBack()">← TORNA ALL'AREA COMUNE</button>
+
+  <div class="footer">
+    Federal Database • Accesso Riservato
+  </div>
+</div>
+
+<script>
+function goBack() {
+  if (document.referrer) {
+    window.history.back();
+  } else {
+    window.location.href = 'area-comune.html';
+  }
+}
+</script>
+
 </body>
 </html>
