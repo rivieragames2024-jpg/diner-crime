@@ -1,84 +1,138 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MICHAEL</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            background-color: #0a1929;
-            color: #c0d8ff;
-            font-family: 'Courier New', monospace;
-            padding: 20px;
-            min-height: 100vh;
-        }
-        .container { max-width: 600px; margin: 0 auto; }
-        .header {
-            text-align: center;
-            padding: 40px 0;
-            border-bottom: 2px solid #4dabff;
-            margin-bottom: 40px;
-        }
-        .header h1 {
-            color: #4dabff;
-            font-size: 32px;
-            letter-spacing: 2px;
-        }
-        .dichiarazione {
-            background-color: #112240;
-            border: 2px solid #1e3a5f;
-            border-radius: 5px;
-            padding: 40px;
-            text-align: center;
-            min-height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #8ab4f8;
-            font-size: 18px;
-            font-style: italic;
-        }
-        .back-btn {
-            background-color: #1e3a5f;
-            color: #64b5ff;
-            border: 1px solid #4dabff;
-            padding: 15px 30px;
-            font-family: 'Courier New', monospace;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 3px;
-            width: 100%;
-            margin-top: 30px;
-        }
-        .back-btn:hover { background-color: #2a4a7a; }
-        .footer {
-            text-align: center;
-            color: #5a7eb0;
-            font-size: 12px;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #1e3a5f;
-        }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Interrogatorio Michael Canepa</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background-color: #0a1929;
+  color: #c0d8ff;
+  font-family: 'Courier New', monospace;
+  padding: 20px;
+  min-height: 100vh;
+}
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.header {
+  text-align: center;
+  padding: 40px 0;
+  border-bottom: 2px solid #4dabff;
+  margin-bottom: 40px;
+}
+.header h1 {
+  color: #4dabff;
+  font-size: 32px;
+  letter-spacing: 2px;
+}
+.dichiarazione {
+  background-color: #112240;
+  border: 2px solid #1e3a5f;
+  border-radius: 5px;
+  padding: 40px;
+  text-align: left;
+  min-height: 300px;
+  color: #8ab4f8;
+  font-size: 18px;
+  font-style: italic;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.dichiarazione p {
+  margin-bottom: 10px;
+}
+.dichiarazione strong {
+  font-weight: bold;
+  color: #c0d8ff;
+}
+.back-btn {
+  background-color: #1e3a5f;
+  color: #64b5ff;
+  border: 1px solid #4dabff;
+  padding: 15px 30px;
+  font-family: 'Courier New', monospace;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 3px;
+  width: 100%;
+  margin-top: 30px;
+}
+.back-btn:hover {
+  background-color: #2a4a7a;
+}
+.footer {
+  text-align: center;
+  color: #5a7eb0;
+  font-size: 12px;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #1e3a5f;
+}
+</style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>MICHAEL</h1>
-        </div>
-        
-        <div class="dichiarazione">
-            [DICHIARAZIONE DOPO LA MORTE DI FRANCESCO]
-        </div>
-        
-        <button class="back-btn" onclick="window.location.href='../area-comune.html'">
-            ← TORNA ALL'AREA COMUNE
-        </button>
-        
-        <div class="footer">
-            Federal Database • Accesso Riservato
-        </div>
-    </div>
+
+<!-- Controllo sicurezza -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  if (localStorage.getItem("federal_access") !== "granted") {
+    window.location.href = "area-comune.html";
+  }
+});
+</script>
+
+<div class="container">
+  <div class="header">
+    <h1>Interrogatorio Michael Canepa</h1>
+  </div>
+
+  <div class="dichiarazione">
+    <p><strong>Detective:</strong> «Michael, puoi dirci il tuo nome completo e la tua età, per favore?»</p>
+    <p><strong>Michael Canepa:</strong> Michael Canepa, 16 anni.</p>
+
+    <p><strong>Detective:</strong> «Lavori nella pizzeria di famiglia, corretto?»</p>
+    <p><strong>Michael Canepa:</strong> Sì… praticamente sono nato qua. Aiuto un po’ ovunque, anche se faccio pasticci, ma sono tutti molto buoni con me.</p>
+
+    <p><strong>Detective:</strong> «Puoi raccontarci dove ti trovavi e cosa stavi facendo nella fascia oraria tra le 18.00 e le 19.00, momento in cui tuo zio Francesco è stato trovato senza vita?»</p>
+    <p><strong>Michael Canepa:</strong> Ero in sala, aiutando Saif con alcune consegne. Poi sono passato dietro al bancone per vedere se c’era bisogno di sistemare qualcosa.</p>
+
+    <p><strong>Detective:</strong> «Chi era presente nella pizzeria in quel periodo?»</p>
+    <p><strong>Michael Canepa:</strong> Mio padre era al forno, il nonno al banco, mia mamma in sala, Saif che gironzolava. E… Zio Francesco.</p>
+
+    <p><strong>Detective:</strong> «Hai notato comportamenti o conversazioni che ti sono sembrati strani o fuori dal normale quel giorno?»</p>
+    <p><strong>Michael Canepa:</strong> Beh… ci sono conversazioni che ho sentito, e ho visto zio Francesco comportarsi in modi strani. Stava litigando con qualcuno dietro il magazzino poco prima che io passassi da lì. Non so cosa si siano detti, ho sentito dei rumori ma non ho dato peso a ciò, poco dopo… sapete bene cosa è successo…</p>
+
+    <p><strong>Detective:</strong> «Hai visto persone entrare o uscire dalla pizzeria in orari o modi non abituali?»</p>
+    <p><strong>Michael Canepa:</strong> Sì, Piero è passato per la consegna, e Francesco lo ha seguito per parlare. Non so di cosa abbiano parlato, ma Francesco sembrava… teso.</p>
+
+    <p><strong>Detective:</strong> «Ci sono cose che hai sentito o visto nei giorni scorsi che pensi possano essere importanti per capire cosa è successo?»</p>
+    <p><strong>Michael Canepa:</strong> Sì. Lo zio era nervoso e continuava a guardarsi intorno come se temesse qualcuno. Non parlava con me, ma sembrava… preoccupato per qualcosa che stava succedendo dietro le quinte, di solito è allegro e spensierato.</p>
+
+    <p><strong>Detective:</strong> «Ti senti sicuro di raccontare tutto ciò che sai senza tralasciare dettagli importanti?»</p>
+    <p><strong>Michael Canepa:</strong> Sto dicendo tutto ciò che ho visto…</p>
+  </div>
+
+  <button class="back-btn" onclick="goBack()">← TORNA ALL'AREA COMUNE</button>
+
+  <div class="footer">
+    Federal Database • Accesso Riservato
+  </div>
+</div>
+
+<script>
+function goBack() {
+  if (document.referrer) {
+    window.history.back();
+  } else {
+    window.location.href = 'area-comune.html';
+  }
+}
+</script>
+
 </body>
 </html>
